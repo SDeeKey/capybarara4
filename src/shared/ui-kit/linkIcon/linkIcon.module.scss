@@ -1,0 +1,13 @@
+.linkIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange400);
+  border-radius: 8px;
+}
+.linkIconContainer:hover {
+  background-color: var(--orange300);
+}
+.linkIconContainer:active {
+  background-color: var(--orange500);
+}
