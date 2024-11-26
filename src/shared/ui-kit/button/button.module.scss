@@ -1,0 +1,19 @@
+.btn {
+  display: flex;
+  background-color: var(--orange400);
+  border-radius: 20px;
+  color: var(--gray50);
+  padding: 8px 48px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+}
+.btn:hover {
+  background-color: var(--orange300);
+}
+.btn:active {
+  background-color: var(--orange500);
+}
