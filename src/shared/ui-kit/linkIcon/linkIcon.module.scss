@@ -1,13 +1,25 @@
-.linkIconContainer {
+@import "./../../../styles/colors";
+@import "./../../../styles/mixins";
+
+.button {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--orange400);
+  @include center;
+  background-color: $orange-400;
   border-radius: 8px;
-}
-.linkIconContainer:hover {
-  background-color: var(--orange300);
-}
-.linkIconContainer:active {
-  background-color: var(--orange500);
+
+  &:hover {
+    background-color: $orange-300;
+  }
+  &:active {
+    background-color: $orange-500;
+  }
+  &--md {
+    height:36px;
+    width: 36px;
+
+  }
+  &--lg {
+    height:44px;
+    width: 44px;
+  }
 }
