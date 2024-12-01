@@ -1,16 +1,15 @@
-.mainTag {
+@import "./../../../styles/mixins";
+@import "./../../../styles/colors";
+
+.tag {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--gray-200);
+  @include center;
+  background-color: $gray-200;
   border-radius: 12px;
   width: fit-content;
 
-  .tag {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
+  .tag__text {
     margin: 4px 20px;
-    color: var(--gray-600);
+    color: $gray-600;
   }
 }

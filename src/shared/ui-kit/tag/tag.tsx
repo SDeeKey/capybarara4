@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './tag.module.scss'
+import s from './tag.module.scss'
 
 
 const Tag = ({title}: {title: string}) => {
     return (
-        <div className={styles.mainTag}>
-            <h3 className={styles.tag}>{title}</h3>
+        <div className={s['tag']}>
+            <h3 className={`${s['tag__text']} body3-medium`}>{title}</h3>
         </div>
     );
 };
