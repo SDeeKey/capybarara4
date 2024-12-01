@@ -1,0 +1,266 @@
+@import '../styles/colors';
+@import '../styles/reset';
+@import '../styles/mixins';
+@import '../styles/breakpoints';
+
+menu-link {
+  @include heading-styles(500, 16px, 24px);
+  color: $gray-600;
+  text-decoration: none;
+
+  &:hover {
+    @include heading-styles(900, 16px, 24px);
+    color: $gray-900;
+    text-decoration: none;
+  }
+
+  &:active {
+    @include heading-styles(800, 16px, 24px);
+    color: $gray-900;
+    text-decoration: none;
+  }
+}
+
+normal-link{
+  @include heading-styles(400, 16px, 24px);
+  color: $gray-600;
+  text-decoration: underline;
+
+  &:hover {
+    @include heading-styles(900, 16px, 24px);
+    color: $gray-900;
+    text-decoration: underline;
+  }
+
+  &:active {
+    @include heading-styles(800, 16px, 24px);
+    color: $gray-900;
+    text-decoration: underline;
+  }
+
+}
+
+
+// Desktop
+@include respond(desktop) {
+  .heading-h1 {
+    @include heading-styles(700, 60px, 72px, -2%);
+  }
+  .heading-h2 {
+    @include heading-styles(600, 36px, 40px, -2%);
+  }
+  .heading-h3-sb {
+    @include heading-styles(600, 30px, 36px, -2%);
+  }
+  .heading-h3-b {
+    @include heading-styles(700, 30px, 36px, -2%);
+  }
+}
+
+// Tablet
+@include respond(tablet) {
+  .heading-h1 {
+    @include heading-styles(700, 48px, 48px, -2%);
+  }
+  .heading-h2 {
+    @include heading-styles(600, 18px, 28px, -2%);
+  }
+  .heading-h3-sb {
+    @include heading-styles(600, 24px, 32px, -2%);
+  }
+  .heading-h3-b {
+    @include heading-styles(700, 24px, 32px, -2%);
+  }
+  .subtitle-tab-mob-normal {
+    @include heading-styles(400, 18px, 28px);
+  }
+  .subtitle-tab-mob-sb {
+    @include heading-styles(600, 18px, 28px);
+  }
+  .body1-tab-mob {
+    @include heading-styles(400, 16px, 24px);
+  }
+}
+
+// Phone
+@include respond(phone) {
+  .heading-h1 {
+    @include heading-styles(600, 36px, 40px);
+  }
+  .heading-h2 {
+    @include heading-styles(600, 18px, 28px, -2%);
+  }
+  .heading-h3-sb {
+    @include heading-styles(600, 24px, 32px, -2%);
+  }
+  .heading-h3-b {
+    @include heading-styles(700, 24px, 32px, -2%);
+  }
+  .subtitle-tab-mob-normal {
+    @include heading-styles(400, 18px, 28px);
+  }
+  .subtitle-tab-mob-sb {
+    @include heading-styles(600, 18px, 28px);
+  }
+  .body1-tab-mob {
+    @include heading-styles(400, 16px, 24px);
+  }
+}
+
+// All screen sizes
+
+// Subtitle
+.subtitle-normal {
+  @include heading-styles(400, 20px, 28px);
+}
+
+.subtitle-sb {
+  @include heading-styles(600, 20px, 28px);
+}
+
+// Body1
+.body1 {
+  @include heading-styles(400, 18px, 28px);
+}
+
+// Body2
+.body2-normal {
+  @include heading-styles(400, 16px, 24px);
+}
+
+.body2-normal-underline {
+  @include heading-styles(400, 16px, 24px);
+  text-underline: $gray-900;
+}
+
+.body2-medium {
+  @include heading-styles(500, 16px, 24px);
+}
+
+.body2-sb {
+  @include heading-styles(600, 16px, 24px);
+}
+
+// Body3
+.body3-sb {
+  @include heading-styles(400, 14px, 20px);
+}
+
+.body3-medium {
+  @include heading-styles(500, 14px, 20px);
+}
+
+
+// Shadows
+/* md */
+.shadow-md {
+  box-shadow:
+          0 2px 2px 0 rgba(0, 0, 0, 0.07),
+          0 4px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* lg */
+.shadow-lg {
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.04),
+  0 4px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 2-xl */
+.shadow-2xl {
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
+}
+
+
+
+.custom_input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: $gray-500;
+  margin-bottom: 4px;
+}
+
+input, textarea {
+  font-size: 16px;
+  padding: 12px 16px;
+  width: 252px;
+  height: 48px;
+  outline: none;
+  background: $white;
+  color: $gray-500;
+  border: 1px solid $gray-500;
+  border-radius: 12px;
+  transition: .3s ease;
+  overflow: hidden; // Скрыть переполнение
+
+  &:focus {
+    background: $gray-100;
+    border: 1px solid $orange-500;
+  }
+  &::placeholder {
+    color: $gray-500;
+  }
+  &:invalid {
+    border: $red-500;
+  }
+}
+
+textarea {
+  height: auto; // Высота автоматически
+  min-height: 182px; // Минимальная высота
+  resize: none; // Отключение изменения размера
+  overflow: auto;
+}
+
+// Error style
+error {
+  input, textarea {
+    border: 1px solid $red-500;
+  }
+
+  label {
+    color: $red-500;
+  }
+}
+
+
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track {
+  margin: 10px 0;
+  border-radius: 2px;
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #4B5563;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #4B5563;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #F7B255;
+}
+
+

@@ -1,0 +1,26 @@
+// Breakpoint Variables
+$breakpoint-phone: 768px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Mixin for Responding to Breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: $breakpoint-phone) {
+      @content;
+    }
+  }
+  @else if $breakpoint == tablet {
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+  @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+  @else {
+    @error "Invalid breakpoint name: #{$breakpoint}";
+  }
+}

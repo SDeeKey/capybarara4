@@ -1,0 +1,36 @@
+// Display column Mixin
+@mixin display-col {
+  display: flex;
+  flex-direction: column;
+}
+// Display row Mixin
+@mixin display-row {
+  display: flex;
+  flex-direction: row;
+}
+
+//Centering mixin
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+//Centering start mixin
+@mixin start {
+  align-items: start;
+  justify-content: center;
+}
+
+// Truncate Text Mixin
+@mixin truncate($max-width) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+// Heading mixin
+@mixin heading-styles($weight, $size, $line-height, $letter-spacing: normal) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
