@@ -1,19 +1,23 @@
+@import "./../../../styles/colors";
+
 .btn {
   display: flex;
-  background-color: var(--orange400);
+  background-color: $orange-400;
   border-radius: 20px;
-  color: var(--gray50);
+  color: $gray-50;
   padding: 8px 48px;
   border: none;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+  &:hover {
+    background-color: $orange-300;
+  }
+  &:active {
+    background-color: $orange-500;
+  }
+
 }
 
-.btn:disabled {
-  opacity: 0.4;
-}
-.btn:hover {
-  background-color: var(--orange300);
-}
-.btn:active {
-  background-color: var(--orange500);
-}
