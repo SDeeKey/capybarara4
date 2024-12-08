@@ -3,7 +3,7 @@
 @import '../styles/mixins';
 @import '../styles/breakpoints';
 
-menu-link {
+.menu-link {
   @include heading-styles(500, 16px, 24px);
   color: $gray-600;
   text-decoration: none;
@@ -11,17 +11,15 @@ menu-link {
   &:hover {
     @include heading-styles(900, 16px, 24px);
     color: $gray-900;
-    text-decoration: none;
   }
 
   &:active {
     @include heading-styles(800, 16px, 24px);
     color: $gray-900;
-    text-decoration: none;
   }
 }
 
-normal-link{
+.normal-link{
   @include heading-styles(400, 16px, 24px);
   color: $gray-600;
   text-decoration: underline;
@@ -29,17 +27,13 @@ normal-link{
   &:hover {
     @include heading-styles(900, 16px, 24px);
     color: $gray-900;
-    text-decoration: underline;
   }
 
   &:active {
     @include heading-styles(800, 16px, 24px);
     color: $gray-900;
-    text-decoration: underline;
   }
-
 }
-
 
 // Desktop
 @include respond(desktop) {
@@ -150,7 +144,6 @@ normal-link{
   @include heading-styles(500, 14px, 20px);
 }
 
-
 // Shadows
 /* md */
 .shadow-md {
@@ -170,67 +163,6 @@ normal-link{
   box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
-
-
-.custom_input {
-  display: flex;
-  align-items: center;
-  position: relative;
-  max-width: 100%;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  color: $gray-500;
-  margin-bottom: 4px;
-}
-
-input, textarea {
-  font-size: 16px;
-  padding: 12px 16px;
-  width: 252px;
-  height: 48px;
-  outline: none;
-  background: $white;
-  color: $gray-500;
-  border: 1px solid $gray-500;
-  border-radius: 12px;
-  transition: .3s ease;
-  overflow: hidden; // Скрыть переполнение
-
-  &:focus {
-    background: $gray-100;
-    border: 1px solid $orange-500;
-  }
-  &::placeholder {
-    color: $gray-500;
-  }
-  &:invalid {
-    border: $red-500;
-  }
-}
-
-textarea {
-  height: auto; // Высота автоматически
-  min-height: 182px; // Минимальная высота
-  resize: none; // Отключение изменения размера
-  overflow: auto;
-}
-
-// Error style
-error {
-  input, textarea {
-    border: 1px solid $red-500;
-  }
-
-  label {
-    color: $red-500;
-  }
-}
-
-
-
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
   height: 4px;
@@ -240,27 +172,33 @@ error {
   margin: 10px 0;
   border-radius: 2px;
   background-color: #DFE9EB;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-track:hover {
   background-color: #B8C0C2;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-track:active {
   background-color: #B8C0C2;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: #4B5563;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-thumb:hover {
   background-color: #4B5563;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-thumb:active {
   background-color: #F7B255;
+  cursor: pointer;
 }
 
 
