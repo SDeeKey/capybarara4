@@ -10,10 +10,15 @@ interface LinkIconProps {
 
 const LinkIcon = ({link, size = 'md'}: LinkIconProps) => {
     return (
-        <a href={link} target='_blank' rel='noopener noreferrer' >
-            <div className={clsx(s['button'], s[`button--${size}`])}>
-                <LinkIconSvg />
-            </div>
+        <a href={link}
+           target='_blank'
+           rel='noopener noreferrer'
+           className={
+            clsx(
+                s['iconButtonLink'],
+                s[`iconButtonLink--${size}`]
+            )}>
+            <LinkIconSvg />
         </a>
     );
 };

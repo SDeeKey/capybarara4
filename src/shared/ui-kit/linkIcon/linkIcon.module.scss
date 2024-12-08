@@ -1,7 +1,7 @@
 @import "./../../../styles/colors";
 @import "./../../../styles/mixins";
 
-.button {
+.iconButtonLink {
   display: flex;
   @include center;
   background-color: $orange-400;

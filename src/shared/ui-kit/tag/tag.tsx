@@ -1,13 +1,11 @@
 import React from 'react';
 import s from './tag.module.scss'
+import clsx from "clsx";
 
-
-const Tag = ({title}: {title: string}) => {
+export const Tag = ({title}: {title: string}) => {
     return (
         <div className={s['tag']}>
-            <h3 className={`${s['tag__text']} body3-medium`}>{title}</h3>
+            <h3 className={clsx(s.tag__text, 'medium')}>{title}</h3>
         </div>
     );
 };
-
-export default Tag;
