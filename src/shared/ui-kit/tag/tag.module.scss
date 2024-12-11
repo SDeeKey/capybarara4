@@ -1,0 +1,15 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+
+.tag {
+  @include display-row;
+  @include center;
+  background-color: $gray-200;
+  border-radius: 12px;
+  width: fit-content;
+
+  &__text {
+    margin: 4px 20px;
+    color: $gray-600;
+  }
+}

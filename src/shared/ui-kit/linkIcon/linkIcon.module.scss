@@ -1,0 +1,30 @@
+@import "@/styles/colors";
+@import "@/styles/mixins";
+
+$md-size: 36px;
+$lg-size: 36px;
+
+.iconButtonLink {
+  @include display-row;
+  @include center;
+  background-color: $orange-400;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: $orange-300;
+  }
+
+  &:active {
+    background-color: $orange-500;
+  }
+
+  &--md {
+    width: $md-size;
+    aspect-ratio: 1/1;
+  }
+
+  &--lg {
+    width: $lg-size;
+    aspect-ratio: 1/1;
+  }
+}
