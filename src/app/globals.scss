@@ -4,12 +4,6 @@
 @import '../styles/breakpoints';
 @import '../styles/variables';
 
-
-//todo поменять название letter-spacing
-//
-
-
-
 %link {
   font-size: 16px;
   line-height: 24px;
@@ -38,32 +32,40 @@
   text-decoration: underline;
 }
 
-
 .heading-1 {
-  @include font-styles(60px, 72px, $letter-spacing2per);
-  font-weight: normal;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: $letter-spacing;
+  font-weight: $bold;
 
   @include respond(tablet) {
-    @include font-styles(48px, 48px);
+    font-size: 48px;
+    line-height: 48px;
   }
   @include respond(phone) {
-    @include font-styles($semibold, 36px, 40px);
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: $semibold;
+    letter-spacing: normal;
   }
 }
 
 .heading-2 {
-  @include font-styles($semibold, 36px, 40px, $letter-spacing2per);
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: $semibold;
+  letter-spacing: $letter-spacing;
 
   @include respond(tablet) {
-    @include font-styles(18px, 28px);
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
-
 %heading-3 {
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: $letter-spacing2per;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: $letter-spacing;
 
   @include respond(tablet) {
     font-size: 24px;
@@ -75,7 +77,6 @@
   &--sb {
     @extend %heading-3;
     font-weight: $semibold;
-
   }
 
   &--b {
@@ -84,73 +85,81 @@
   }
 }
 
-// Tablet
-@include respond(tablet) {
-  .subtitle-tab-mob-normal {
-    @include font-styles(400, 18px, 28px);
-  }
-  .subtitle-tab-mob-sb {
-    @include font-styles(600, 18px, 28px);
-  }
-  .body1-tab-mob {
-    @include font-styles(400, 16px, 24px);
+%subtitle {
+  font-size: 20px;
+  line-height: 28px;
+
+  @include respond(tablet) {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
-// Phone
-@include respond(phone) {
-  .subtitle-tab-mob-normal {
-    @include font-styles(400, 18px, 28px);
+.subtitle {
+  &--normal {
+    @extend %subtitle;
+    font-weight: $normal;
   }
-  .subtitle-tab-mob-sb {
-    @include font-styles(600, 18px, 28px);
+
+  &--sb {
+    @extend %subtitle;
+    font-weight: $semibold;
   }
-  .body1-tab-mob {
-    @include font-styles(400, 16px, 24px);
+}
+
+.body-1 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: $normal;
+
+  @include respond(tablet) {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
-// All screen sizes
-
-// Subtitle
-.subtitle-normal {
-  @include font-styles(400, 20px, 28px);
+%body-2 {
+  font-size: 16px;
+  line-height: 24px;
 }
 
-.subtitle-sb {
-  @include font-styles(600, 20px, 28px);
+.body-2 {
+  &--normal {
+    @extend %body-2;
+    font-weight: $normal;
+  }
+
+  &--underline {
+    @extend %body-2;
+    font-weight: $normal;
+    text-decoration: underline;
+  }
+
+  &--medium {
+    @extend %body-2;
+    font-weight: $medium;
+  }
+
+  &--sb {
+    @extend %body-2;
+    font-weight: $semibold;
+  }
 }
 
-// Body1
-.body1 {
-  @include font-styles(400, 18px, 28px);
+%body-3 {
+  font-size: 14px;
+  line-height: 20px;
 }
 
-// Body2
-.body2-normal {
-  @include font-styles(400, 16px, 24px);
-}
+.body-3 {
+  &--normal {
+    @extend %body-3;
+    font-weight: $normal;
+  }
 
-.body2-normal-underline {
-  @include font-styles(400, 16px, 24px);
-  text-underline: $gray-900;
-}
-
-.body2-medium {
-  @include font-styles(500, 16px, 24px);
-}
-
-.body2-sb {
-  @include font-styles(600, 16px, 24px);
-}
-
-// Body3
-.body3-sb {
-  @include font-styles(400, 14px, 20px);
-}
-
-.body3-medium {
-  @include font-styles(500, 14px, 20px);
+  &--medium {
+    font-weight: $medium;
+  }
 }
 
 // Shadows
@@ -209,5 +218,3 @@
   background-color: #F7B255;
   cursor: pointer;
 }
-
-
