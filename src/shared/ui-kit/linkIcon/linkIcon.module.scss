@@ -1,8 +1,11 @@
-@import "./../../../styles/colors";
-@import "./../../../styles/mixins";
+@import "@/styles/colors";
+@import "@/styles/mixins";
+
+$md-size: 36px;
+$lg-size: 36px;
 
 .iconButtonLink {
-  display: flex;
+  @include display-row;
   @include center;
   background-color: $orange-400;
   border-radius: 8px;
@@ -10,16 +13,18 @@
   &:hover {
     background-color: $orange-300;
   }
+
   &:active {
     background-color: $orange-500;
   }
-  &--md {
-    height:36px;
-    width: 36px;
 
+  &--md {
+    width: $md-size;
+    aspect-ratio: 1/1;
   }
+
   &--lg {
-    height:44px;
-    width: 44px;
+    width: $lg-size;
+    aspect-ratio: 1/1;
   }
 }

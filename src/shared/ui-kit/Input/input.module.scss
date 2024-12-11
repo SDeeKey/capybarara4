@@ -34,7 +34,7 @@
 
       &:focus {
         background: $gray-100;
-        border: 1px solid $orange-500;
+        border-color: $orange-500;
       }
 
       &::placeholder {
@@ -42,7 +42,7 @@
       }
 
       &--error {
-        border: 1px solid $red-500;
+        border-color: $red-500;
       }
     }
 

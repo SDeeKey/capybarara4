@@ -1,12 +1,14 @@
 // Display column Mixin
-@mixin display-col {
+@mixin display-col ($gap: 0) {
   display: flex;
   flex-direction: column;
+  gap: $gap;
 }
 // Display row Mixin
-@mixin display-row {
+@mixin display-row ($gap: 0) {
   display: flex;
   flex-direction: row;
+  gap: $gap;
 }
 
 //Centering mixin
@@ -27,10 +29,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-// Heading mixin
-@mixin heading-styles($weight, $size, $line-height, $letter-spacing: normal) {
-  font-weight: $weight;
-  font-size: $size;
-  line-height: $line-height;
-  letter-spacing: $letter-spacing;
-}
+

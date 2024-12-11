@@ -1,19 +1,24 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, {useState, useId} from 'react';
 import s from './input.module.scss';
 import clsx from 'clsx';
 
-type InputType = 'text' | 'password' | 'email' | 'url' | 'phone' | 'login';
+
+type InputType = 'text' | 'password' | 'email' | 'phone';
 
 interface InputProps {
     type: InputType;
     onChange?: (value: string) => void;
+    placeholder?: string;
+    labelName?: string;
 }
 
-export const Input = ({type}: InputProps) => {
+export const Input = ({type, placeholder, labelName}: InputProps) => {
     const [value, setValue] = useState<string>('');
     const [error, setError] = useState<string>('');
+
+    const uniqueId = useId();
 
     const validateInput = (value: string) => {
         switch (type) {
@@ -69,22 +74,25 @@ export const Input = ({type}: InputProps) => {
     return (
         <div className={s['input-wrapper']}>
             <label
-                htmlFor="myInput"
+                htmlFor={uniqueId}
                 className={clsx(s['input-wrapper__label'], {[s['input-wrapper__label--error']]: error})}
             >
-                {type}
+                {labelName || type}
             </label>
             <div className={s['input-wrapper__error-wrapper']}>
                 <input
-                    id="myInput"
+                    id={uniqueId}
                     className={clsx(s['input-wrapper__input'], {[s['input-wrapper__input--error']]: error})}
                     type={type === 'phone' ? 'text' : type}
                     value={value}
                     onChange={handleChange}
-                    placeholder={type === 'phone' ? '+7(___)-___-__-__' : type}
+                    placeholder={type === 'phone' ? '+7(___)-___-__-__' : placeholder}
                     required
                 />
-                {error && <span className={s['input-wrapper__error']}>{error}</span>}
+                {error &&
+                    <span className={s['input-wrapper__error']}>
+                        {error}
+                    </span>}
             </div>
         </div>
     );

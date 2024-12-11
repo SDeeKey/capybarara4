@@ -1,11 +1,13 @@
 'use client'
 
-import React, {useState} from 'react';
+import {ChangeEvent, useState} from 'react';
 import s from './textarea.module.scss'
 import clsx from "clsx";
 
 interface textareaParams {
     onChange?: (value: string) => void;
+    // value
+    // setValue
 }
 
 export const Textarea = () => {
@@ -16,8 +18,7 @@ export const Textarea = () => {
         return value.length <= 500 ? true : 'Character limit';
     }
 
-
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         const textareaValue = event.target.value;
         setValue(textareaValue);
         const validationMessage = validateTextarea(textareaValue);

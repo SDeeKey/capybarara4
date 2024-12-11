@@ -1,7 +1,6 @@
 // Breakpoint Variables
 $breakpoint-phone: 768px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 1024px;
 
 // Mixin for Responding to Breakpoints
 @mixin respond($breakpoint) {
@@ -11,12 +10,7 @@ $breakpoint-desktop: 1024px;
     }
   }
   @else if $breakpoint == tablet {
-    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-      @content;
-    }
-  }
-  @else if $breakpoint == desktop {
-    @media (min-width: $breakpoint-desktop) {
+    @media (max-width: $breakpoint-tablet) {
       @content;
     }
   }

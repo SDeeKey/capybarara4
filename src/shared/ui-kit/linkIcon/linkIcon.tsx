@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import LinkIconSvg from './../../../img/linkIcon.svg';
+import LinkIconSvg from '@/img/linkIcon.svg';
 import s from './linkIcon.module.scss'
 
 interface LinkIconProps {

@@ -1,7 +1,8 @@
-@import "./../../../styles/colors";
+@import "@/styles/colors";
+@import "@/styles/mixins";
 
 .btn {
-  display: flex;
+  @include display-row;
   background-color: $orange-400;
   border-radius: 20px;
   color: $gray-50;
