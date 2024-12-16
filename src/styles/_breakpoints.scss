@@ -9,12 +9,15 @@ $breakpoint-tablet: 1024px;
       @content;
     }
   }
+
   @else if $breakpoint == tablet {
     @media (max-width: $breakpoint-tablet) {
       @content;
     }
   }
+
   @else {
     @error "Invalid breakpoint name: #{$breakpoint}";
   }
+
 }

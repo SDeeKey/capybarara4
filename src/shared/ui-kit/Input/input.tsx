@@ -4,17 +4,16 @@ import React, {useState, useId} from 'react';
 import s from './input.module.scss';
 import clsx from 'clsx';
 
-
 type InputType = 'text' | 'password' | 'email' | 'phone';
 
 interface InputProps {
     type: InputType;
-    onChange?: (value: string) => void;
     placeholder?: string;
     labelName?: string;
+    required?: boolean;
 }
 
-export const Input = ({type, placeholder, labelName}: InputProps) => {
+export const Input = ({type, placeholder, labelName, required}: InputProps) => {
     const [value, setValue] = useState<string>('');
     const [error, setError] = useState<string>('');
 
@@ -55,8 +54,6 @@ export const Input = ({type, placeholder, labelName}: InputProps) => {
         return cleaned; // Если не совпадает, возвращаем очищенный ввод
     };
 
-    // Писал any вместо React.ChangeEvent<HTMLInputElement> - выдает ошибку, с ошибкой мне не нравится,
-    // так что выход такой, если есть идеи чем заменить - напиши
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
         let formattedValue = inputValue;
@@ -73,12 +70,15 @@ export const Input = ({type, placeholder, labelName}: InputProps) => {
 
     return (
         <div className={s['input-wrapper']}>
-            <label
-                htmlFor={uniqueId}
-                className={clsx(s['input-wrapper__label'], {[s['input-wrapper__label--error']]: error})}
-            >
-                {labelName || type}
-            </label>
+            {
+                labelName &&
+                <label
+                    htmlFor={uniqueId}
+                    className={clsx(s['input-wrapper__label'], {[s['input-wrapper__label--error']]: error})}
+                >
+                    {required ? (labelName ? `${labelName}*` : '*') : labelName}
+                </label>
+            }
             <div className={s['input-wrapper__error-wrapper']}>
                 <input
                     id={uniqueId}
@@ -87,12 +87,15 @@ export const Input = ({type, placeholder, labelName}: InputProps) => {
                     value={value}
                     onChange={handleChange}
                     placeholder={type === 'phone' ? '+7(___)-___-__-__' : placeholder}
-                    required
+                    required={required}
+                    maxLength={type === 'phone' ? 17 : undefined}
                 />
-                {error &&
+                {
+                    error &&
                     <span className={s['input-wrapper__error']}>
                         {error}
-                    </span>}
+                    </span>
+                }
             </div>
         </div>
     );

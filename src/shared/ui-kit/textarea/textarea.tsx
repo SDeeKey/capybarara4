@@ -5,12 +5,12 @@ import s from './textarea.module.scss'
 import clsx from "clsx";
 
 interface textareaParams {
-    onChange?: (value: string) => void;
-    // value
-    // setValue
+    labelName?: string;
+    required?: boolean;
+    placeholder?: string;
 }
 
-export const Textarea = () => {
+export const Textarea = ( {labelName, required, placeholder}: textareaParams) => {
     const [value, setValue] = useState<string>('');
     const [error, setError] = useState<string>('');
 
@@ -27,22 +27,31 @@ export const Textarea = () => {
 
     return (
         <div className={s['textarea-wrapper']}>
-            <label
-                htmlFor="myTextarea"
-                className={clsx(s['textarea-wrapper__label'], {[s['textarea-wrapper__label--error']]: error})}
-            >
-                description
-            </label>
+
+            {
+                labelName &&
+                <label
+                    htmlFor="myTextarea"
+                    className={clsx(s['textarea-wrapper__label'], {[s['textarea-wrapper__label--error']]: error})}
+                >
+                    {required ? (labelName ? `${labelName}*` : '*') : labelName}
+                </label>
+            }
             <div className={s['textarea-wrapper__error-wrapper']}>
                 <textarea
                     id="myTextarea"
                     className={clsx(s['textarea-wrapper__textarea'], {[s['textarea-wrapper__textarea--error']]: error})}
                     value={value}
                     onChange={handleChange}
-                    placeholder='Text'
-                    required
+                    placeholder={placeholder || 'Text'}
+                    required = {required}
                 />
-                {error && <span className={s['textarea-wrapper__error']}>{error}</span>}
+                {
+                    error &&
+                    <span className={s['textarea-wrapper__error']}>
+                        {error}
+                    </span>
+                }
             </div>
         </div>
 

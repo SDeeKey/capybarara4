@@ -1,11 +1,10 @@
-import styles from "./page.module.css";
-
-
+import s from "./page.module.scss";
 
 export default function Home() {
 
     return (
-        <main className={styles.page}>
+        <main className={s['page']}>
+
         </main>
     );
 }

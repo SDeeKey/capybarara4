@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: $gap;
 }
+
 // Display row Mixin
 @mixin display-row ($gap: 0) {
   display: flex;
@@ -16,6 +17,7 @@
   align-items: center;
   justify-content: center;
 }
+
 //Centering start mixin
 @mixin start {
   align-items: start;
@@ -29,4 +31,3 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
