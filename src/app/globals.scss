@@ -22,30 +22,31 @@
 }
 
 .menu-link {
-  font-weight: $medium;
   @extend %link;
+  font-weight: $weight-medium;
 }
 
 .normal-link {
   @extend %link;
-  font-weight: $normal;
+  font-weight: $weight-normal;
   text-decoration: underline;
 }
 
 .heading-1 {
   font-size: 60px;
   line-height: 72px;
-  letter-spacing: $letter-spacing;
-  font-weight: $bold;
+  letter-spacing: $default-letter-spacing;
+  font-weight: $weight-bold;
 
   @include respond(tablet) {
     font-size: 48px;
     line-height: 48px;
   }
+
   @include respond(phone) {
     font-size: 36px;
     line-height: 40px;
-    font-weight: $semibold;
+    font-weight: $weight-semibold;
     letter-spacing: normal;
   }
 }
@@ -53,8 +54,8 @@
 .heading-2 {
   font-size: 36px;
   line-height: 40px;
-  font-weight: $semibold;
-  letter-spacing: $letter-spacing;
+  font-weight: $weight-semibold;
+  letter-spacing: $default-letter-spacing;
 
   @include respond(tablet) {
     font-size: 18px;
@@ -65,7 +66,7 @@
 %heading-3 {
   font-size: 30px;
   line-height: 36px;
-  letter-spacing: $letter-spacing;
+  letter-spacing: $default-letter-spacing;
 
   @include respond(tablet) {
     font-size: 24px;
@@ -76,12 +77,12 @@
 .heading-3 {
   &--sb {
     @extend %heading-3;
-    font-weight: $semibold;
+    font-weight: $weight-semibold;
   }
 
   &--b {
     @extend %heading-3;
-    font-weight: $bold;
+    font-weight: $weight-bold;
   }
 }
 
@@ -98,19 +99,19 @@
 .subtitle {
   &--normal {
     @extend %subtitle;
-    font-weight: $normal;
+    font-weight: $weight-normal;
   }
 
   &--sb {
     @extend %subtitle;
-    font-weight: $semibold;
+    font-weight: $weight-semibold;
   }
 }
 
 .body-1 {
   font-size: 18px;
   line-height: 28px;
-  font-weight: $normal;
+  font-weight: $weight-normal;
 
   @include respond(tablet) {
     font-size: 16px;
@@ -126,23 +127,23 @@
 .body-2 {
   &--normal {
     @extend %body-2;
-    font-weight: $normal;
+    font-weight: $weight-normal;
   }
 
   &--underline {
     @extend %body-2;
-    font-weight: $normal;
+    font-weight: $weight-normal;
     text-decoration: underline;
   }
 
   &--medium {
     @extend %body-2;
-    font-weight: $medium;
+    font-weight: $weight-medium;
   }
 
   &--sb {
     @extend %body-2;
-    font-weight: $semibold;
+    font-weight: $weight-semibold;
   }
 }
 
@@ -154,11 +155,11 @@
 .body-3 {
   &--normal {
     @extend %body-3;
-    font-weight: $normal;
+    font-weight: $weight-normal;
   }
 
   &--medium {
-    font-weight: $medium;
+    font-weight: $weight-medium;
   }
 }
 

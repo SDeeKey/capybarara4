@@ -1,5 +1,6 @@
 @import "@/styles/colors";
 @import "@/styles/mixins";
+@import '@/styles/variables';
 
 .btn {
   @include display-row;
@@ -9,7 +10,7 @@
   padding: 8px 48px;
   border: none;
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition: $default-transition;
 
   &:disabled {
     opacity: 0.4;
