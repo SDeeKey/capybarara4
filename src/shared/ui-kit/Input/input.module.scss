@@ -1,0 +1,58 @@
+@import '@/styles/mixins';
+@import '@/styles/colors';
+@import '@/styles/variables';
+
+.input-wrapper {
+  @include display-col;
+  width: fit-content;
+
+  &__label {
+    font-size: 14px;
+    color: $gray-500;
+    margin-bottom: 4px;
+
+    &--error {
+      color: $red-500;
+    }
+  }
+
+  &__error-wrapper {
+    @include display-col;
+    @include center;
+
+    .input-wrapper__input {
+      font-size: 16px;
+      padding: 12px 16px;
+      width: 252px;
+      height: 48px;
+      outline: none;
+      background: $white;
+      color: $gray-500;
+      border: 1px solid $gray-500;
+      border-radius: 12px;
+      transition: $default-transition;
+      overflow: hidden;
+
+      &:focus {
+        background: $gray-100;
+        border-color: $orange-500;
+      }
+
+      &::placeholder {
+        color: $gray-500;
+      }
+
+      &--error {
+        border-color: $red-500;
+      }
+    }
+
+    .input-wrapper__error {
+      font-size: 10px;
+      color: $red-500;
+      width: fit-content;
+      max-width: 250px;
+      padding: 5px;
+    }
+  }
+}

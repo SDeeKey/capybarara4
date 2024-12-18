@@ -1,0 +1,60 @@
+@import '@/styles/mixins';
+@import '@/styles/colors';
+@import '@/styles/variables';
+
+.textarea-wrapper {
+  @include display-col;
+  width: fit-content;
+
+  .textarea-wrapper__label {
+    font-size: 14px;
+    color: $gray-500;
+    margin-bottom: 4px;
+
+    &--error {
+      color: $red-500;
+    }
+  }
+
+  .textarea-wrapper__error-wrapper {
+    @include display-col;
+    @include center;
+
+    .textarea-wrapper__textarea {
+      font-size: 16px;
+      padding: 12px 16px;
+      width: 252px;
+      outline: none;
+      background: $white;
+      color: $gray-500;
+      border: 1px solid $gray-500;
+      border-radius: 12px;
+      transition: $default-transition;
+      height: auto;
+      min-height: 182px;
+      resize: none;
+      overflow: auto;
+
+      &:focus {
+        background: $gray-100;
+        border: 1px solid $orange-500;
+      }
+
+      &::placeholder {
+        color: $gray-500;
+      }
+
+      &--error {
+        border: 1px solid $red-500;
+      }
+    }
+
+    .textarea-wrapper__error {
+      font-size: 10px;
+      color: $red-500;
+      width: fit-content;
+      max-width: 250px;
+      padding: 5px;
+    }
+  }
+}

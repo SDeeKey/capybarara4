@@ -1,0 +1,33 @@
+// Display column Mixin
+@mixin display-col ($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// Display row Mixin
+@mixin display-row ($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+//Centering mixin
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+
+//Centering start mixin
+@mixin start {
+  align-items: start;
+  justify-content: center;
+}
+
+// Truncate Text Mixin
+@mixin truncate($max-width) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
