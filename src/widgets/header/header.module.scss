@@ -1,0 +1,123 @@
+@import '@/styles/mixins';
+@import '@/styles/colors';
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+
+.header {
+  @include display-col;
+  position: relative;
+
+  .nav {
+    @include display-row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    padding: 16px 80px;
+    z-index: 3;
+
+    @include respond(phone) {
+
+      @include display-col;
+      background-color: $white;
+      width: 30%;
+      height: 100%;
+    }
+
+    &__menu {
+      @include display-row;
+
+      @include respond(phone) {
+        @include display-col;
+        width: 85%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 5;
+        background-color: $gray-100;
+        transition: $default-transition;
+      }
+    }
+
+    &__header-block {
+      display: none;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__list {
+      @include display-row(24px);
+      justify-content: space-between;
+      align-content: space-between;
+
+
+      @include respond(phone) {
+        @include display-col(16px);
+        padding: 16px;
+      }
+    }
+
+    &__close, &__open {
+      position: absolute;
+      display: none;
+      cursor: pointer;
+      user-select: none;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__close {
+      top: 16px;
+      right: 16px;
+    }
+
+    &__open {
+      top: 16px;
+      right: 16px;
+    }
+
+    &__overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $gray-900;
+      opacity: 50%;
+      backdrop-filter: blur(10px);
+      z-index: 4;
+    }
+
+    &__logo {
+      display: none;
+      cursor: pointer;
+      user-select: none;
+      padding: 16px;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+
+      @include respond(phone) {
+        &:checked {
+          ~ .nav__menu {
+            right: 0;
+          }
+
+          ~ .nav__overlay {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

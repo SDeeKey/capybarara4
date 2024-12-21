@@ -1,0 +1,97 @@
+@import '@/styles/mixins';
+
+
+.wave {
+  @include display-row;
+  @include center;
+  position: relative;
+  overflow: hidden;
+
+
+  &__background {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__front {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  &__first-orange {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    z-index: 1;
+
+    animation-duration: 20s;
+    animation-name: slider;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+  }
+
+  &__second-orange {
+    position: absolute;
+    left: 60px;
+    bottom: 10px;
+    z-index: 1;
+
+    animation-duration: 25s;
+    animation-name: slider;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+
+  }
+}
+
+@keyframes slider {
+  0%{
+    left: -100px;
+    bottom: 10px;
+    transform: rotate(-30deg);
+  }
+
+  10% {
+    left: 250px;
+    bottom: -7px;
+    transform: rotate(50deg);
+  }
+
+  20%{
+    left: 500px;
+    bottom: 10px;
+    transform: rotate(0deg);
+  }
+
+  40%{
+    left: 750px;
+    bottom: 0;
+    transform: rotate(-30deg);
+
+  }
+
+  60%{
+    left: 1000px;
+    bottom: 10px;
+    transform: rotate(0deg);
+
+  }
+
+  80%{
+    left: 1250px;
+    bottom: -7px;
+    transform: rotate(-30deg);
+  }
+
+  100%{
+    left: 1500px;
+    bottom: 15px;
+    transform: rotate(0deg);
+  }
+}

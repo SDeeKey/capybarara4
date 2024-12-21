@@ -1,0 +1,95 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/breakpoints';
+
+.introduction {
+  @include display-col;
+  @include center;
+
+  &__wrapper {
+    @include display-row(192px);
+    @include center;
+    margin: 96px 80px 40px 80px;
+
+    @include respond(tablet) {
+      @include display-row-reverse(32px);
+      margin: 64px 64px 40px 64px;
+      align-items: center;
+      width: fit-content;
+    }
+
+    @include respond(phone) {
+      @include display-col;
+      row-gap: 32px;
+      margin: 32px 16px 40px;
+      align-items: center;
+    }
+  }
+
+  &__text-block {
+    @include display-col;
+    height: fit-content;
+    width: fit-content;
+
+    @include respond(tablet) {
+      @include display-col;
+      @include center;
+    }
+
+    @include respond(phone) {
+      @include display-col(16px);
+      @include center;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    color: $gray-600;
+    margin-top: 8px;
+    max-width: 768px;
+
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: end;
+    margin-top: 48px;
+    user-select: none;
+  }
+
+  &__image {
+    @include display-row;
+    width: 320px;
+    height: 360px;
+
+    @include respond(tablet) {
+      @include display-row;
+      width: 236px;
+      height: 265px;
+    }
+    @include respond(phone) {
+      display: none;
+      flex-direction: row;
+    }
+  }
+
+  &__image-between{
+    display: block;
+    width: 0; // <-- Это костыль, я не придумал как по-другому пофиксить.
+    aspect-ratio: 1/1; // Если задашься вопросом: "что это?", то поменяй display на none и убери размеры
+
+    @include respond(phone) {
+      @include display-row;
+      width: 279px;
+      height: 314px;
+    }
+  }
+
+  &__wave-wrapper {
+    @include center;
+    @include display-col;
+  }
+}
