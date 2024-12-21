@@ -1,6 +1,5 @@
 @import '@/styles/mixins';
 
-
 .wave {
   @include display-row;
   @include center;
@@ -25,7 +24,6 @@
     left: 10px;
     bottom: 20px;
     z-index: 1;
-
     animation-duration: 20s;
     animation-name: slider;
     animation-iteration-count: infinite;
@@ -39,14 +37,12 @@
     left: 60px;
     bottom: 10px;
     z-index: 1;
-
     animation-duration: 25s;
     animation-name: slider;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 2s;
-
   }
 }
 
@@ -73,14 +69,12 @@
     left: 750px;
     bottom: 0;
     transform: rotate(-30deg);
-
   }
 
   60%{
     left: 1000px;
     bottom: 10px;
     transform: rotate(0deg);
-
   }
 
   80%{
