@@ -12,7 +12,7 @@ interface ButtonProps {
 export const Button = ({title, onClick}: ButtonProps) => {
     return (
         <button
-            className={clsx(s.btn, 'subtitle-sb')}
+            className={clsx(s.btn, 'subtitle--sb')}
             onClick={onClick}>
             {title}
         </button>

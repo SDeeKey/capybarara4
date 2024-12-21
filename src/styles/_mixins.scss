@@ -12,6 +12,20 @@
   gap: $gap;
 }
 
+// Display column-reverse Mixin
+@mixin display-col-reverse ($gap: 0) {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $gap;
+}
+
+// Display row-reverse Mixin
+@mixin display-row-reverse ($gap: 0) {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: $gap;
+}
+
 //Centering mixin
 @mixin center {
   align-items: center;
