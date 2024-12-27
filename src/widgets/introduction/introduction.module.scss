@@ -4,49 +4,51 @@
 
 .introduction {
   @include display-col;
-  @include center;
+  @include display-center;
+  overflow-x: hidden;
 
   &__wrapper {
-    @include display-row(192px);
-    @include center;
+    @include display-row(10vw);
+    @include display-center;
     margin: 96px 80px 40px 80px;
 
     @include respond(tablet) {
-      @include display-row-reverse(32px);
+      @include display-row-reverse(3vw);
       margin: 64px 64px 40px 64px;
       align-items: center;
       width: fit-content;
     }
 
     @include respond(phone) {
-      @include display-col;
-      row-gap: 32px;
+      @include display-col(3vw);
       margin: 32px 16px 40px;
       align-items: center;
     }
   }
 
-  &__text-block {
-    @include display-col;
+  &__text-block-wrapper {
+    @include display-col(2.5px);
     height: fit-content;
     width: fit-content;
 
     @include respond(tablet) {
-      @include display-col;
-      @include center;
+      @include display-center;
     }
 
     @include respond(phone) {
-      @include display-col(16px);
-      @include center;
+      @include display-center;
       text-align: center;
+      gap: 16px;
     }
+  }
+
+  &__text-block {
+    @include display-col(8px);
   }
 
   &__description {
     color: $gray-600;
-    margin-top: 8px;
-    max-width: 768px;
+    max-width: 50vw;
 
     @include respond(tablet) {
       display: none;
@@ -54,42 +56,39 @@
   }
 
   &__btn {
-    display: flex;
-    justify-content: end;
-    margin-top: 48px;
+    align-self: flex-end;
     user-select: none;
   }
 
   &__image {
     @include display-row;
-    width: 320px;
     height: 360px;
+    width: 320px;
 
     @include respond(tablet) {
-      @include display-row;
-      width: 236px;
       height: 265px;
+      width: 236px;
     }
+
     @include respond(phone) {
       display: none;
-      flex-direction: row;
     }
   }
 
-  &__image-between{
+  &__image-between {
     display: block;
     width: 0; // <-- Это костыль, я не придумал как по-другому пофиксить.
     aspect-ratio: 1/1; // Если задашься вопросом: "что это?", то поменяй display на none и убери размеры
 
     @include respond(phone) {
       @include display-row;
-      width: 279px;
       height: 314px;
+      width: 279px;
     }
   }
 
   &__wave-wrapper {
-    @include center;
+    @include display-center;
     @include display-col;
   }
 }

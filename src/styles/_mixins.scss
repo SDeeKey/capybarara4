@@ -27,13 +27,13 @@
 }
 
 //Centering mixin
-@mixin center {
+@mixin display-center {
   align-items: center;
   justify-content: center;
 }
 
 //Centering start mixin
-@mixin start {
+@mixin display-start {
   align-items: start;
   justify-content: center;
 }
