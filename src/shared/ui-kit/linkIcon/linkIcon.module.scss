@@ -6,7 +6,7 @@ $lg-size: 36px;
 
 .iconButtonLink {
   @include display-row;
-  @include center;
+  @include display-center;
   background-color: $orange-400;
   border-radius: 8px;
 

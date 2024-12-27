@@ -10,7 +10,6 @@ interface ButtonProps {
     className?: string;
 }
 
-
 export const Button = ({className, title, onClick}: ButtonProps) => {
     return (
         <button
