@@ -1,33 +1,21 @@
-@import '@/styles/colors';
-@import '@/styles/mixins';
-@import '@/styles/breakpoints';
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
 
 .introduction {
-  @include display-col;
-  @include display-center;
   overflow-x: hidden;
+  gap: 40px;
 
   &__wrapper {
     @include display-row(10vw);
-    @include display-center;
-    margin: 96px 80px 40px 80px;
 
     @include respond(tablet) {
       @include display-row-reverse(3vw);
-      margin: 64px 64px 40px 64px;
-      align-items: center;
-      width: fit-content;
-    }
-
-    @include respond(phone) {
-      @include display-col(3vw);
-      margin: 32px 16px 40px;
-      align-items: center;
     }
   }
 
   &__text-block-wrapper {
-    @include display-col(2.5px);
+    @include display-col(2.5vh);
     height: fit-content;
     width: fit-content;
 
@@ -36,7 +24,6 @@
     }
 
     @include respond(phone) {
-      @include display-center;
       text-align: center;
       gap: 16px;
     }
@@ -58,6 +45,10 @@
   &__btn {
     align-self: flex-end;
     user-select: none;
+
+    @include respond(phone) {
+      align-self: center;
+    }
   }
 
   &__image {
@@ -77,8 +68,8 @@
 
   &__image-between {
     display: block;
-    width: 0; // <-- Это костыль, я не придумал как по-другому пофиксить.
-    aspect-ratio: 1/1; // Если задашься вопросом: "что это?", то поменяй display на none и убери размеры
+    width: 0; // <-- Костыль. Нужен, тк без него к двум картинкам применяется
+    aspect-ratio: 1/1; // стиль display:none, а так не должно быть
 
     @include respond(phone) {
       @include display-row;

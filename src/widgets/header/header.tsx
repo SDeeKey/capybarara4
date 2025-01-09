@@ -7,8 +7,8 @@ import {NavigationMenu} from "@/shared/navigationMenu/navigationMenu";
 
 export const Header = () => {
     return (
-        <div className={s['header']}>
-            <div className={s['nav']}>
+        <header className={s['header']}>
+            <nav className={s['nav']}>
                 <Logo />
                 <input type="checkbox" id={'check'} className={s['nav__checkbox']} />
                 <div className={s['nav__menu']}>
@@ -26,7 +26,7 @@ export const Header = () => {
                     <OpenMenuIcon/>
                 </label>
                 <div className={s['nav__overlay']}/>
-            </div>
-        </div>
+            </nav>
+        </header>
     );
 };

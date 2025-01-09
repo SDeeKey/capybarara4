@@ -1,9 +1,11 @@
-@import '@/styles/mixins';
-@import '@/styles/breakpoints';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+@import '@/styles/_variables';
 
 .wave {
   @include display-row;
   @include display-center;
+
   position: relative;
   overflow: hidden;
 
@@ -36,7 +38,7 @@
   }
 
   &__first-orange {
-    animation: slider 20s linear infinite forwards 2s;
+    animation: slider 20s $animation-default;
     position: absolute;
     aspect-ratio: 1/1;
     width: 4vw;
@@ -46,17 +48,17 @@
 
     @include respond(tablet) {
       width: 7vw;
-      animation: slider-tablet 20s linear infinite forwards 2s;
+      animation: slider-tablet 20s $animation-default;
     }
 
     @include respond(phone) {
       width: 9vw;
-      animation: slider-phone 20s linear infinite forwards 2s;
+      animation: slider-phone 20s $animation-default;
     }
   }
 
   &__second-orange {
-    animation: slider 25s linear infinite forwards 2s;
+    animation: slider 25s $animation-default;
     position: absolute;
     aspect-ratio: 1/1;
     width: 4vw;
@@ -66,12 +68,12 @@
 
     @include respond(tablet) {
       width: 7vw;
-      animation: slider-tablet 23s linear infinite forwards 2s;
+      animation: slider-tablet 23s $animation-default;
     }
 
     @include respond(phone) {
       width: 9vw;
-      animation: slider-phone 23s linear infinite forwards 2s;
+      animation: slider-phone 23s $animation-default
     }
   }
 }
