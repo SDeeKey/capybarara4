@@ -3,7 +3,7 @@ type MenuItemsArray = {
     anchor?: string;
 }
 
-export const NavigationItems: MenuItemsArray[]= [
+export const navigationItems: MenuItemsArray[] = [
     {
         menuItem: 'Experience',
     },
@@ -16,5 +16,4 @@ export const NavigationItems: MenuItemsArray[]= [
     {
         menuItem: 'Contact',
     },
-
 ]
