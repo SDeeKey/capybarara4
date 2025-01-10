@@ -1,0 +1,23 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_breakpoints';
+
+.technologies-items {
+  @include display-col(10px);
+  @include display-center;
+  transition: transform 0.3s;
+  height: 100px;
+  width: 102px;
+
+  @include respond(tablet) {
+    width: 90px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .title {
+    color: $gray-600;
+  }
+}

@@ -1,0 +1,58 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+@import '@/styles/_breakpoints';
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+
+  &__carousel {
+    @include display-row;
+    @include display-center;
+    transition: transform 1s ease;
+    width: 100%;
+
+    // Стили для групп
+    &__group {
+      // Позиционирование групп
+      &--0 {
+        transform: translateX(0);
+      }
+
+      &--1 {
+        transform: translateX(-100%);
+      }
+
+      &--2 {
+        transform: translateX(-200%);
+      }
+
+      &--3 {
+        transform: translateX(-300%);
+      }
+
+      &--4 {
+        transform: translateX(-400%);
+      }
+    }
+  }
+
+  // Настройка ширины для каждой группы
+  .items-per-group {
+    > div {
+      @include display-row(67.5px);
+      @include display-center;
+
+
+      @include respond(tablet) {
+        gap: 47.5px
+      }
+
+      @include respond(phone) {
+        gap: 9px;
+      }
+    }
+  }
+}
