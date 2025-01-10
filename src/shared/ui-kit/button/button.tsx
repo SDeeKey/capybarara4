@@ -13,7 +13,7 @@ interface ButtonProps {
 export const Button = ({className, title, onClick}: ButtonProps) => {
     return (
         <button
-            className={clsx(s.btn, className, 'subtitle--sb')}
+            className={clsx(s.btn, 'subtitle--sb', className)}
             onClick={onClick}>
             {title}
         </button>
