@@ -9,8 +9,8 @@ export const Header = () => {
     return (
         <header className={s['header']}>
             <nav className={s['nav']}>
-                <Logo />
-                <input type="checkbox" id={'check'} className={s['nav__checkbox']} />
+                <Logo/>
+                <input type="checkbox" id={'check'} className={s['nav__checkbox']}/>
                 <div className={s['nav__menu']}>
                     <div className={s['nav__header-block']}>
                         <div className={s['nav__logo']}>
