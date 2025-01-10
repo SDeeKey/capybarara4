@@ -1,0 +1,229 @@
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+@import '@/styles/_variables';
+
+.wave {
+  @include display-row;
+  @include display-center;
+
+  position: relative;
+  overflow: hidden;
+
+  &__background {
+    @include display-row;
+    width: 100vw;
+    z-index: 1;
+
+    @include respond(tablet) {
+      width: 150vw;
+    }
+
+    @include respond(phone) {
+      width: 200vw;
+    }
+  }
+
+  &__front {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+
+    @include respond(tablet) {
+      width: 150vw;
+    }
+
+    @include respond(phone) {
+      width: 200vw;
+    }
+  }
+
+  &__first-orange {
+    animation: slider 20s $animation-default;
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 4vw;
+    z-index: 1;
+    bottom: 20px;
+    left: 10px;
+
+    @include respond(tablet) {
+      width: 7vw;
+      animation: slider-tablet 20s $animation-default;
+    }
+
+    @include respond(phone) {
+      width: 9vw;
+      animation: slider-phone 20s $animation-default;
+    }
+  }
+
+  &__second-orange {
+    animation: slider 25s $animation-default;
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 4vw;
+    z-index: 1;
+    bottom: 10px;
+    left: 60px;
+
+    @include respond(tablet) {
+      width: 7vw;
+      animation: slider-tablet 23s $animation-default;
+    }
+
+    @include respond(phone) {
+      width: 9vw;
+      animation: slider-phone 23s $animation-default
+    }
+  }
+}
+
+@keyframes slider {
+  0% {
+    left: -10vw;
+    bottom: 3vh;
+    transform: rotate(-30deg);
+  }
+
+  10% {
+    left: 10vw;
+    bottom: 1vh;
+    transform: rotate(50deg);
+  }
+
+  20% {
+    left: 20vw;
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+
+  40% {
+    left: 40vw;
+    bottom: 2vh;
+    transform: rotate(-30deg);
+  }
+
+  60% {
+    left: 60vw;
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+
+  80% {
+    left: 80vw;
+    bottom: 2vh;
+    transform: rotate(-30deg);
+  }
+
+  90% {
+    left: 90vw;
+    bottom: 0;
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    left: 100vw;
+    bottom: 5vh;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slider-tablet {
+  0% {
+    left: -15vw;
+    bottom: 6vh;
+    transform: rotate(-30deg);
+  }
+
+  10% {
+    left: 15vw;
+    bottom: 0;
+    transform: rotate(50deg);
+  }
+
+  20% {
+    left: 30vw;
+    bottom: 0;
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    left: 60vw;
+    bottom: 2vh;
+    transform: rotate(0deg);
+  }
+
+  60% {
+    left: 90vw;
+    bottom: 0;
+    transform: rotate(20deg);
+  }
+
+  80% {
+    left: 120vw;
+    bottom: 1vh;
+    transform: rotate(-30deg);
+  }
+
+  90% {
+    left: 135vw;
+    bottom: 0;
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    left: 150vw;
+    bottom: 5vh;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slider-phone {
+  0% {
+    left: -10vw;
+    bottom: 2vh;
+    transform: rotate(-30deg);
+  }
+
+  10% {
+    left: 20vw;
+    bottom: 0;
+    transform: rotate(50deg);
+  }
+
+  20% {
+    left: 40vw;
+    bottom: 0;
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    left: 80vw;
+    bottom: 1.5vh;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    left: 100vw;
+    bottom: -1vh;
+    transform: rotate(20deg);
+  }
+
+  80% {
+    left: 160vw;
+    bottom: 1.5vh;
+    transform: rotate(-30deg);
+  }
+
+  90% {
+    left: 180vw;
+    bottom: 1vh;
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    left: 200vw;
+    bottom: 3vh;
+    transform: rotate(0deg);
+  }
+}

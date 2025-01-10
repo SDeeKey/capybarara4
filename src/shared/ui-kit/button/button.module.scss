@@ -11,6 +11,7 @@
   border: none;
   cursor: pointer;
   transition: $default-transition;
+  width: fit-content;
 
   &:disabled {
     opacity: 0.4;

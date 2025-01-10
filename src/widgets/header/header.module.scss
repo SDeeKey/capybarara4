@@ -1,0 +1,112 @@
+@import '@/styles/mixins';
+@import '@/styles/colors';
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+
+.header {
+  @include display-col;
+  position: relative;
+
+  .nav {
+    @include display-row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 80px;
+    z-index: 3;
+
+    @include respond(phone) {
+      @include display-col;
+      background-color: $white;
+      width: 30%;
+      height: 100%;
+    }
+
+    &__menu {
+      @include display-row;
+
+      @include respond(phone) {
+        @include display-col;
+        transition: $default-transition;
+        background-color: $gray-100;
+        position: fixed;
+        height: 100vh;
+        right: -100%;
+        z-index: 5;
+        width: 85%;
+        top: 0;
+      }
+    }
+
+    &__header-block {
+      display: none;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__list {
+      @include display-row(24px);
+      justify-content: space-between;
+      align-content: space-between;
+
+      @include respond(phone) {
+        @include display-col(16px);
+        padding: 16px;
+      }
+    }
+
+    &__close, &__open {
+      position: absolute;
+      user-select: none;
+      cursor: pointer;
+      display: none;
+      right: 16px;
+      top: 16px;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__overlay {
+      background-color: $gray-900;
+      backdrop-filter: blur(10px);
+      position: fixed;
+      display: none;
+      height: 100%;
+      opacity: 50%;
+      width: 100%;
+      z-index: 4;
+      left: 0;
+      top: 0;
+    }
+
+    &__logo {
+      user-select: none;
+      cursor: pointer;
+      display: none;
+      padding: 16px;
+
+      @include respond(phone) {
+        display: block;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+
+      @include respond(phone) {
+        &:checked {
+          ~ .nav__menu {
+            right: 0;
+          }
+
+          ~ .nav__overlay {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

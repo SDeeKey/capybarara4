@@ -1,0 +1,85 @@
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.introduction {
+  overflow-x: hidden;
+  gap: 40px;
+
+  &__wrapper {
+    @include display-row(10vw);
+
+    @include respond(tablet) {
+      @include display-row-reverse(3vw);
+    }
+  }
+
+  &__text-block-wrapper {
+    @include display-col(2.5vh);
+    height: fit-content;
+    width: fit-content;
+
+    @include respond(tablet) {
+      @include display-center;
+    }
+
+    @include respond(phone) {
+      text-align: center;
+      gap: 16px;
+    }
+  }
+
+  &__text-block {
+    @include display-col(8px);
+  }
+
+  &__description {
+    color: $gray-600;
+    max-width: 50vw;
+
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    align-self: flex-end;
+    user-select: none;
+
+    @include respond(phone) {
+      align-self: center;
+    }
+  }
+
+  &__image {
+    @include display-row;
+    height: 360px;
+    width: 320px;
+
+    @include respond(tablet) {
+      height: 265px;
+      width: 236px;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__image-between {
+    display: block;
+    width: 0; // <-- Костыль. Нужен, тк без него к двум картинкам применяется
+    aspect-ratio: 1/1; // стиль display:none, а так не должно быть
+
+    @include respond(phone) {
+      @include display-row;
+      height: 314px;
+      width: 279px;
+    }
+  }
+
+  &__wave-wrapper {
+    @include display-center;
+    @include display-col;
+  }
+}

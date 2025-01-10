@@ -18,7 +18,7 @@
 
   .textarea-wrapper__error-wrapper {
     @include display-col;
-    @include center;
+    @include display-center;
 
     .textarea-wrapper__textarea {
       font-size: 16px;

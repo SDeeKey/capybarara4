@@ -4,6 +4,21 @@
 @import '@/styles/breakpoints';
 @import '@/styles/variables';
 
+// Section wrapper style
+.section-wrapper {
+  @include display-col;
+  @include display-center;
+  padding: 96px 80px;
+
+  @include respond(tablet) {
+    padding: 64px;
+  }
+
+  @include respond(phone) {
+    padding: 32px 16px;
+  }
+}
+
 %link {
   font-size: 16px;
   line-height: 24px;

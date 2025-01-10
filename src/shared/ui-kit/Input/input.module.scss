@@ -18,7 +18,7 @@
 
   &__error-wrapper {
     @include display-col;
-    @include center;
+    @include display-center;
 
     .input-wrapper__input {
       font-size: 16px;

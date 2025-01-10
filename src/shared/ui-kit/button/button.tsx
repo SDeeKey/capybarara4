@@ -7,12 +7,13 @@ import clsx from "clsx";
 interface ButtonProps {
     title: string;
     onClick?: () => void;
+    className?: string;
 }
 
-export const Button = ({title, onClick}: ButtonProps) => {
+export const Button = ({className, title, onClick}: ButtonProps) => {
     return (
         <button
-            className={clsx(s.btn, 'subtitle-sb')}
+            className={clsx(s.btn, 'subtitle--sb', className)}
             onClick={onClick}>
             {title}
         </button>
