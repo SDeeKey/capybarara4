@@ -6,8 +6,8 @@
   @include display-col(10px);
   @include display-center;
   transition: transform 0.3s;
-  height: 100px;
-  width: 102px;
+  height: 105px;
+  aspect-ratio: 1/1;
 
   @include respond(tablet) {
     width: 90px;
@@ -17,7 +17,12 @@
     transform: scale(1.05);
   }
 
-  .title {
+  svg {
+    width: 60px;
+    aspect-ratio: 1/1;
+  }
+
+  &__title {
     color: $gray-600;
   }
 }

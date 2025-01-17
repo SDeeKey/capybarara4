@@ -17,6 +17,9 @@
       color: $gray-600;
       text-align: center;
     }
+    &-unbroken-line{
+      white-space: nowrap;
+    }
   }
 
   &__svg {

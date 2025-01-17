@@ -3,55 +3,78 @@
 @import '@/styles/_breakpoints';
 
 .slider {
+  @include display-row;
+  @include display-center;
   position: relative;
   overflow: hidden;
   width: 100%;
   height: auto;
 
-  &__carousel {
+  &__groups {
     @include display-row;
     @include display-center;
-    transition: transform 1s ease;
-    width: 100%;
+    overflow: hidden;
+    width: 60%;
 
-    // Стили для групп
+    @include respond(tablet) {
+      width: 80%;
+    };
+
+    @include respond(phone) {
+      width: 100%;
+    };
+
     &__group {
-      // Позиционирование групп
-      &--0 {
-        transform: translateX(0);
-      }
-
-      &--1 {
-        transform: translateX(-100%);
-      }
-
-      &--2 {
-        transform: translateX(-200%);
-      }
-
-      &--3 {
-        transform: translateX(-300%);
-      }
-
-      &--4 {
-        transform: translateX(-400%);
-      }
-    }
-  }
-
-  // Настройка ширины для каждой группы
-  .items-per-group {
-    > div {
-      @include display-row(67.5px);
+      @include display-row(67px);
       @include display-center;
-
+      animation: slideAnimation 6s infinite forwards;
+      will-change: transform;
+      flex-shrink: 0;
+      width: 100%;
 
       @include respond(tablet) {
-        gap: 47.5px
+        gap: 20px;
       }
 
       @include respond(phone) {
+        animation: slideAnimation5 10s infinite forwards;
         gap: 9px;
+      }
+
+      @keyframes slideAnimation {
+        0% {
+          transform: translateX(200%);
+        }
+        25% {
+          transform: translateX(100%);
+        }
+        50% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes slideAnimation5 {
+        0% {
+          transform: translateX(300%);
+        }
+        20% {
+          transform: translateX(200%);
+        }
+        40% {
+          transform: translateX(100%);
+        }
+        60% {
+          transform: translateX(0);
+        }
+        80% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(-200%);
+        }
       }
     }
   }

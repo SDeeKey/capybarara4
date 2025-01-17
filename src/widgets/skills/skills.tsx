@@ -15,7 +15,7 @@ export const Skills = () => {
                     </h1>
                     <p className={'subtitle--normal'}>
                         The skills, tools and technologies
-                        Capybarara&nbsp;really&nbsp;good&nbsp;at:
+                        <span className={s['skills__content-unbroken-line']}> Capybarara really good at:</span>
                     </p>
                 </div>
                 <Slider defaultItemsPerGroup={5}/>

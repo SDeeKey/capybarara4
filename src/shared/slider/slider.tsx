@@ -1,19 +1,25 @@
-'use client';
-import React, {useEffect, useState} from 'react';
+'use client'
+
+import React, {ReactNode, useEffect, useState} from 'react';
 import s from './slider.module.scss';
 import {TechnologiesBlock} from "@/shared/technologiesBlock/technologiesBlock";
 import {technologies} from "@/shared/slider/sliderData";
 import clsx from "clsx";
 
+type Technology = {
+    image: ReactNode;
+    title: string;
+};
+
 type SliderProps = {
     className?: string;
-    defaultItemsPerGroup: 3 | 4 | 5;
+    defaultItemsPerGroup: number;
 };
 
 export const Slider = ({className, defaultItemsPerGroup = 5}: SliderProps) => {
-    const [currentGroup, setCurrentGroup] = useState(0);
     const [itemsPerGroup, setItemsPerGroup] = useState(defaultItemsPerGroup);
 
+    // Изменение количества элементов в группе при изменении размера экрана
     useEffect(() => {
         const updateItemsPerGroup = () => {
             if (window.innerWidth <= 768) {
@@ -29,40 +35,33 @@ export const Slider = ({className, defaultItemsPerGroup = 5}: SliderProps) => {
         return () => window.removeEventListener('resize', updateItemsPerGroup);
     }, [defaultItemsPerGroup]);
 
-    const totalGroups = Math.ceil(technologies.length / itemsPerGroup);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentGroup((prev) => (prev + 1) % totalGroups); // Переключение на следующую группу
-        }, 2000); // Время переключения
-
-        return () => clearInterval(interval); // Очистка интервала
-    }, [totalGroups]);
-
+    // Разделяем элементы на группы в зависимости от количества элементов на группу
+    const groupedTechnologies = technologies.reduce((acc: Technology[][], tech, index) => {
+        if (index % itemsPerGroup === 0) {
+            acc.push([]);
+        }
+        acc[acc.length - 1].push(tech);
+        return acc;
+    }, []);
     return (
-        <div className={clsx(
-            s.slider,
-            className
-        )}>
-            <div className={clsx(
-                s.slider__carousel,
-                s['items-per-group']
-            )}>
-                <div className={clsx(
-                    s.slider__group,
-                    s[`slider__group--${currentGroup}`]
-                )}>
-                    {technologies.slice(
-                        currentGroup * itemsPerGroup,
-                        (currentGroup + 1) * itemsPerGroup)
-                        .map((tech, key) => (
+        <div className={clsx(s['slider'], className)}>
+            <div className={s['slider__groups']}>
+                {groupedTechnologies.map((group, groupIndex) => (
+                    <div
+                        key={groupIndex}
+                        className={clsx(
+                            s['slider__groups__group'],
+                        )}
+                    >
+                        {group.map((tech, index) => (
                             <TechnologiesBlock
-                                key={key}
+                                key={index}
                                 image={tech.image}
                                 title={tech.title}
                             />
                         ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
