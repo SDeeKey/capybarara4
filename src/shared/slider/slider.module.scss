@@ -28,7 +28,7 @@
 
     @include respond(tablet) {
       width: 100%;
-    };
+    }
 
     &__group {
       @include display-row(67px);
