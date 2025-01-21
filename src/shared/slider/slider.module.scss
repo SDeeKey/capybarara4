@@ -6,9 +6,7 @@
   @include display-row;
   @include display-center;
   position: relative;
-  overflow: hidden;
   width: 100%;
-  height: auto;
 
   &__groups {
     @include display-row;
@@ -16,11 +14,19 @@
     overflow: hidden;
     width: 60%;
 
-    @include respond(tablet) {
-      width: 80%;
-    };
+    @media (max-width: 1485px) {
+      width: 70%;
+    }
 
-    @include respond(phone) {
+    @media (max-width: 1285px) {
+      width: 80%;
+    }
+
+    @media (max-width: 1185px) {
+      width: 91%;
+    }
+
+    @include respond(tablet) {
       width: 100%;
     };
 
@@ -31,13 +37,16 @@
       will-change: transform;
       flex-shrink: 0;
       width: 100%;
+      padding: 0 500px;
 
       @include respond(tablet) {
-        gap: 20px;
+        gap: 47px;
       }
 
       @include respond(phone) {
-        animation: slideAnimation5 10s infinite forwards;
+        animation: slideAnimationMobile 10s infinite forwards;
+        justify-content: space-evenly;
+        padding: 0;
         gap: 9px;
       }
 
@@ -56,7 +65,7 @@
         }
       }
 
-      @keyframes slideAnimation5 {
+      @keyframes slideAnimationMobile {
         0% {
           transform: translateX(300%);
         }

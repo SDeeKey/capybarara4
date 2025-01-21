@@ -18,7 +18,7 @@ export const Skills = () => {
                         <span className={s['skills__content-unbroken-line']}> Capybarara really good at:</span>
                     </p>
                 </div>
-                <Slider defaultItemsPerGroup={5}/>
+                <Slider/>
             </div>
             <Image className={s['skills__svg']} src={orange} alt={'orange'}/>
         </section>

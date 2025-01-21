@@ -13,16 +13,17 @@ type Technology = {
 
 type SliderProps = {
     className?: string;
-    defaultItemsPerGroup: number;
 };
 
-export const Slider = ({className, defaultItemsPerGroup = 5}: SliderProps) => {
+export const Slider = ({className}: SliderProps) => {
+    const defaultItemsPerGroup = 5;
+    const breakpointPhone = 768;
     const [itemsPerGroup, setItemsPerGroup] = useState(defaultItemsPerGroup);
 
     // Изменение количества элементов в группе при изменении размера экрана
     useEffect(() => {
         const updateItemsPerGroup = () => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= breakpointPhone) {
                 setItemsPerGroup(3);
             } else {
                 setItemsPerGroup(defaultItemsPerGroup);
@@ -43,6 +44,7 @@ export const Slider = ({className, defaultItemsPerGroup = 5}: SliderProps) => {
         acc[acc.length - 1].push(tech);
         return acc;
     }, []);
+
     return (
         <div className={clsx(s['slider'], className)}>
             <div className={s['slider__groups']}>
