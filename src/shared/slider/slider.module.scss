@@ -5,15 +5,18 @@
 .slider {
   @include display-row;
   @include display-center;
+
   position: relative;
   width: 100%;
 
   &__groups {
     @include display-row;
     @include display-center;
+
     overflow: hidden;
     width: 60%;
 
+    //todo: исправить адаптив с использованием breakpoint'ов
     @media (max-width: 1485px) {
       width: 70%;
     }
@@ -33,7 +36,8 @@
     &__group {
       @include display-row(67px);
       @include display-center;
-      animation: slideAnimation 6s infinite forwards;
+
+      animation: slideAnimation 12s infinite forwards;
       will-change: transform;
       flex-shrink: 0;
       width: 100%;
@@ -44,7 +48,7 @@
       }
 
       @include respond(phone) {
-        animation: slideAnimationMobile 10s infinite forwards;
+        animation: slideAnimationMobile 20s infinite forwards;
         justify-content: space-evenly;
         padding: 0;
         gap: 9px;

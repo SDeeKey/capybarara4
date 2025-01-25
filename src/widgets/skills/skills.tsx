@@ -7,7 +7,10 @@ import Image from "next/image";
 
 export const Skills = () => {
     return (
-        <section className={clsx(s.skills, 'section-wrapper')}>
+        <section className={clsx(
+            s.skills,
+            'section-wrapper'
+        )}>
             <div className={s['skills__content']}>
                 <div className={s['skills__content-text']}>
                     <h1 className={'heading-1'}>
@@ -20,7 +23,11 @@ export const Skills = () => {
                 </div>
                 <Slider/>
             </div>
-            <Image className={s['skills__svg']} src={orange} alt={'orange'}/>
+            <Image className={
+                s['skills__svg']}
+                src={orange}
+                alt={'orange'}
+            />
         </section>
     );
 };

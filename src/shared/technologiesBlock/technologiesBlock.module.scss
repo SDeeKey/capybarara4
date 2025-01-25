@@ -5,6 +5,7 @@
 .technologies-items {
   @include display-col(10px);
   @include display-center;
+
   transition: transform 0.3s;
   height: 105px;
   aspect-ratio: 1/1;

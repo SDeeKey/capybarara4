@@ -1,6 +1,6 @@
 'use client'
 
-import React, {ReactNode, useEffect, useState} from 'react';
+import {ReactNode, useEffect, useState} from 'react';
 import s from './slider.module.scss';
 import {TechnologiesBlock} from "@/shared/technologiesBlock/technologiesBlock";
 import {technologies} from "@/shared/slider/sliderData";
@@ -46,7 +46,10 @@ export const Slider = ({className}: SliderProps) => {
     }, []);
 
     return (
-        <div className={clsx(s['slider'], className)}>
+        <div className={clsx(
+            s['slider'],
+            className
+        )}>
             <div className={s['slider__groups']}>
                 {groupedTechnologies.map((group, groupIndex) => (
                     <div
