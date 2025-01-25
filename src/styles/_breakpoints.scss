@@ -19,5 +19,4 @@ $breakpoint-tablet: 1024px;
   @else {
     @error "Invalid breakpoint name: #{$breakpoint}";
   }
-
 }

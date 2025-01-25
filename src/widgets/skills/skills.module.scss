@@ -1,0 +1,40 @@
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.skills {
+  position: relative;
+
+  &__content {
+    @include display-col(40px);
+    @include display-center;
+    width: 100%;
+
+    &-text {
+      @include display-col(16px);
+      @include display-center;
+      color: $gray-600;
+      text-align: center;
+    }
+    &-unbroken-line{
+      white-space: nowrap;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 154px;
+    height: 198px;
+
+    @include respond(tablet) {
+      width: 82px;
+      height: 130px;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}
