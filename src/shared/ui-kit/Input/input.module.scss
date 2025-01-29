@@ -3,13 +3,13 @@
 @import '@/styles/variables';
 
 .input-wrapper {
-  @include display-col;
-  width: fit-content;
+  @include display-col(4px);
+
+  width: 100%;
+  min-width: 250px;
 
   &__label {
-    font-size: 14px;
     color: $gray-500;
-    margin-bottom: 4px;
 
     &--error {
       color: $red-500;
@@ -21,12 +21,12 @@
     @include display-center;
 
     .input-wrapper__input {
-      font-size: 16px;
       padding: 12px 16px;
-      width: 252px;
+      width: 100%;
+      min-width: 250px;
       height: 48px;
       outline: none;
-      background: $white;
+      background: transparent;
       color: $gray-500;
       border: 1px solid $gray-500;
       border-radius: 12px;
@@ -50,8 +50,8 @@
     .input-wrapper__error {
       font-size: 10px;
       color: $red-500;
-      width: fit-content;
-      max-width: 250px;
+      min-width: 250px;
+      width: 100%;
       padding: 5px;
     }
   }

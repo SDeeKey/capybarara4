@@ -1,0 +1,84 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_variables';
+@import '@/styles/_breakpoints';
+
+.experience-content {
+  display: grid;
+  grid-template-areas: 'date experience';
+  gap: 32px;
+
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr 2fr
+  }
+
+  @include respond(phone) {
+    grid-template-columns: none;
+    width: 90%;
+    gap: 0;
+  }
+
+  .DateAndDescription-item {
+    @include display-col(24px);
+  }
+
+  &__mobile {
+    background-color: $white;
+    border-radius: 12px;
+
+    &--date {
+      padding: 16px 32px;
+      border-bottom: 1px solid $gray-200;
+      margin: 0 16px;
+      color: $gray-500;
+      cursor: pointer;
+
+      &:hover {
+        color: $gray-950;
+      }
+    }
+
+    &--details {
+      border-radius: 12px;
+      padding: 32px;
+    }
+  }
+
+  &__dates {
+    grid-area: date;
+    background-color: $white;
+    border-radius: 12px;
+    height: fit-content;
+
+    @include respond(tablet) {
+      height: max-content;
+      width: fit-content;
+    }
+  }
+
+  &__date {
+    transition: $default-transition;
+    margin: 16px 32px;
+    color: $gray-500;
+    cursor: pointer;
+
+    &:first-child, &:last-child {
+      margin: 32px
+    }
+
+    &:hover {
+      color: $gray-950;
+    }
+  }
+
+  &__experience {
+    grid-area: experience;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 32px;
+    flex-grow: 1;
+    height: 236px;
+    overflow: hidden;
+  }
+}
