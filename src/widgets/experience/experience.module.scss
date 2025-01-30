@@ -14,6 +14,7 @@
   &__text-block {
     @include display-col(16px);
     @include display-center;
+
     color: $orange-500;
     text-align: center;
 

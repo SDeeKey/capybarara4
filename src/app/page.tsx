@@ -4,8 +4,6 @@ import {Header} from "@/widgets/header/header";
 import {Skills} from "@/widgets/skills/skills";
 import {Experience} from "@/widgets/experience/experience";
 
-
-
 export default function Home() {
     return (
         <main className={s['page']}>
@@ -13,7 +11,6 @@ export default function Home() {
             <Introduction/>
             <Skills/>
             <Experience/>
-
         </main>
     );
 }
