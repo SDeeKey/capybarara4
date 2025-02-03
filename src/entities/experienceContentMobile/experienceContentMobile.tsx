@@ -34,7 +34,8 @@ export const ExperienceContentMobile = ({className}: ExperienceContentProps) => 
                             activeIndex === index &&
                             <div className={clsx(
                                 s['experience-content-mobile--details'],
-                                'shadow-md')}>
+                                'shadow-md'
+                            )}>
                                 <DateAndDescription
                                     experience={item}
                                 />
