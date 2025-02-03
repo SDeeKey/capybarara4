@@ -1,0 +1,20 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_variables';
+@import '@/styles/_breakpoints';
+
+.experience-content {
+  &--mobile {
+    display: none;
+  }
+
+  @include respond(phone) {
+    &--mobile {
+      display: grid;
+    }
+
+    &--desktop {
+      display: none;
+    }
+  }
+}

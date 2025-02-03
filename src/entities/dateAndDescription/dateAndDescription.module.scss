@@ -1,0 +1,50 @@
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.dateAndDescription {
+  @include display-row(48px);
+
+  @include respond(phone) {
+    @include display-col(24px);
+  }
+
+  svg {
+    min-width: 103px;
+    height: 46px;
+
+    @include respond(phone) {
+      width: 103px;
+    }
+  }
+
+  &__wrapper {
+    @include display-col(16px);
+  }
+
+  &__subtitle {
+    color: $gray-900;
+  }
+
+  &__list {
+    @include display-col(16px);
+
+    color: $gray-600;
+    max-height: 128px;
+    overflow-y: scroll;
+
+    @include respond(phone) {
+      max-height: max-content;
+      overflow-y: auto;
+    }
+  }
+
+  &__item {
+    list-style: disc;
+    margin: 0 8px 0 16px;
+
+    &::marker {
+      color: $orange-500;
+    }
+  }
+}

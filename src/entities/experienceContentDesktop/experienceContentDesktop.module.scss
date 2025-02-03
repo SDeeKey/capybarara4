@@ -1,0 +1,51 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_variables';
+@import '@/styles/_breakpoints';
+
+.experience-content-desktop{
+  display: grid;
+  grid-template-areas: 'date experience';
+  gap: 32px;
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &--dates {
+    grid-area: date;
+    background-color: $white;
+    border-radius: 12px;
+    height: fit-content;
+
+    @include respond(tablet) {
+      height: max-content;
+      width: fit-content;
+    }
+  }
+
+  &--date {
+    transition: $default-transition;
+    margin: 16px 32px;
+    color: $gray-500;
+    cursor: pointer;
+
+    &:first-child, &:last-child {
+      margin: 32px
+    }
+
+    &:hover, &.active {
+      color: $gray-950;
+    }
+  }
+
+  &--experience {
+    grid-area: experience;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 32px;
+    flex-grow: 1;
+    height: 236px;
+    overflow: hidden;
+  }
+}
