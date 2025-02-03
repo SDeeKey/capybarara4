@@ -1,0 +1,14 @@
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.tags {
+  @include display-row(8px);
+
+  justify-content: start;
+  max-width: 480px;
+  flex-wrap: wrap;
+
+  @include respond(tablet) {
+    max-width: none;
+  }
+}

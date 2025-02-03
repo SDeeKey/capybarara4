@@ -8,7 +8,7 @@ interface LinkIconProps {
     size: 'md' | 'lg';
 }
 
-const LinkIcon = ({link, size = 'md'}: LinkIconProps) => {
+export const LinkIcon = ({link, size = 'md'}: LinkIconProps) => {
     return (
         <a href={link}
            target='_blank'
@@ -22,5 +22,3 @@ const LinkIcon = ({link, size = 'md'}: LinkIconProps) => {
         </a>
     );
 };
-
-export default LinkIcon;

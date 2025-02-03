@@ -3,6 +3,7 @@ import {Introduction} from "@/widgets/introduction/introduction";
 import {Header} from "@/widgets/header/header";
 import {Skills} from "@/widgets/skills/skills";
 import {Experience} from "@/widgets/experience/experience";
+import {Work} from "@/widgets/work/work";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <Introduction/>
             <Skills/>
             <Experience/>
+            <Work/>
         </main>
     );
 }
