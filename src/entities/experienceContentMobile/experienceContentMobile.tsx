@@ -20,27 +20,28 @@ export const ExperienceContentMobile = ({className}: ExperienceContentProps) => 
         )}>
             {
                 experienceDataItems.map((item, index) => (
-                <div key={index}>
-                    <div
-                        className={clsx(
-                            s['experience-content-mobile--date'],
-                            index === activeIndex && s['active']
-                        )}
-                        onClick={() => setActiveIndex(index)}
-                    >
-                        {item.date}
-                    </div>
-                    {activeIndex === index && (
-                        <div className={clsx(
-                            s['experience-content-mobile--details'],
-                            'shadow-md')}>
-                            <DateAndDescription
-                                experience={item}
-                            />
+                    <div key={index}>
+                        <div
+                            className={clsx(
+                                s['experience-content-mobile--date'],
+                                index === activeIndex && s['active']
+                            )}
+                            onClick={() => setActiveIndex(index)}
+                        >
+                            {item.date}
                         </div>
-                    )}
-                </div>
-            ))}
+                        {
+                            activeIndex === index &&
+                            <div className={clsx(
+                                s['experience-content-mobile--details'],
+                                'shadow-md')}>
+                                <DateAndDescription
+                                    experience={item}
+                                />
+                            </div>
+                        }
+                    </div>
+                ))}
         </div>
     );
 };

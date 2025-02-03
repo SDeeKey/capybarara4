@@ -24,27 +24,26 @@ export const ExperienceContentDesktop = ({className}: ExperienceContentProps) =>
             )}>
                 {
                     experienceDataItems.map((item, index) => (
-                    <div
-                        key={index}
-                        onClick={() => setActiveIndex(index)}
-                        className={clsx(
-                            s['experience-content-desktop--date'],
-                            index === activeIndex && s['active']
-                        )}>
-                        {item.date}
-                    </div>
-                ))}
+                        <div
+                            key={index}
+                            onClick={() => setActiveIndex(index)}
+                            className={clsx(
+                                s['experience-content-desktop--date'],
+                                index === activeIndex && s['active']
+                            )}>
+                            {item.date}
+                        </div>
+                    ))}
             </div>
             <div className={clsx(s['experience-content-desktop--experience'], 'shadow-md')}>
                 {
                     experienceDataItems.map((item, index) => (
-                    activeIndex === index && (
+                        activeIndex === index &&
                         <DateAndDescription
                             key={index}
                             experience={item}
                         />
-                    )
-                ))}
+                    ))}
             </div>
         </div>
     );
