@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useState} from 'react';
-import s from './experienceContent-mobile.module.scss'
+import s from './experienceContentMobile.module.scss'
 import {experienceDataItems} from "@/shared/experienceContent/experienceData";
 import clsx from "clsx";
 import {DateAndDescription} from "@/entities/dateAndDescription/dateAndDescription";

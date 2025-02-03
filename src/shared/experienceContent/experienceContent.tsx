@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './experienceContent.module.scss';
 import clsx from "clsx";
-import {ExperienceContentDesktop} from "@/entities/experienceContent-desktop/experienceContent-desktop";
-import {ExperienceContentMobile} from "@/entities/experienceContent-mobile/experienceContent-mobile";
+import {ExperienceContentDesktop} from "@/entities/experienceContentDesktop/experienceContentDesktop";
+import {ExperienceContentMobile} from "@/entities/experienceContentMobile/experienceContentMobile";
 
 type ExperienceProps = {
     className?: string;
