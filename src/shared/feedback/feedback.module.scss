@@ -1,0 +1,62 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_breakpoints';
+
+.feedback {
+  @include display-col(24px);
+
+  background-color: $white;
+  border-radius: 12px;
+  padding: 32px;
+  user-select: none;
+
+  &__header {
+    @include display-row(32px);
+
+    align-items: center;
+
+    &__name {
+      color: $gray-900;
+
+    }
+
+    &__post {
+      color: $gray-600;
+      white-space: nowrap;
+
+      @include respond(phone) {
+        white-space: normal;
+      }
+    }
+  }
+
+  &__body {
+    display: block;
+    color: $gray-600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+
+    &--first {
+      display: -webkit-box;
+      color: $gray-600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+      @include respond(tablet) {
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    &--second {
+      display: -webkit-box;
+      color: $gray-600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
+}
