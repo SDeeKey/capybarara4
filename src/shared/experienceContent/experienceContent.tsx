@@ -10,10 +10,12 @@ type ExperienceProps = {
 
 export const ExperienceContent = ({className}: ExperienceProps) => {
     return (
-        <div className={clsx(s['experience-content'], className)}>
+        <div className={clsx(
+            s['experience-content'],
+            className
+        )}>
             <ExperienceContentMobile
-                className={
-                s['experience-content--mobile']
+                className={s['experience-content--mobile']
             }/>
             <ExperienceContentDesktop
                 className={s['experience-content--desktop']

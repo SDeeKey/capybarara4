@@ -35,7 +35,10 @@ export const ExperienceContentDesktop = ({className}: ExperienceContentProps) =>
                         </div>
                     ))}
             </div>
-            <div className={clsx(s['experience-content-desktop--experience'], 'shadow-md')}>
+            <div className={clsx(
+                s['experience-content-desktop--experience'],
+                'shadow-md'
+            )}>
                 {
                     experienceDataItems.map((item, index) => (
                         activeIndex === index &&
