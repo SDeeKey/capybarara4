@@ -14,7 +14,7 @@ export const Experience = () => {
                 <h1 className={'heading-1'}>
                     Experience
                 </h1>
-                <p className={clsx(s.subtitle, 'subtitle--normal')}>
+                <p className={clsx(s['subtitle'], 'subtitle--normal')}>
                     Here is a quick summary of Capibarara most recent experiences:
                 </p>
             </div>

@@ -13,11 +13,7 @@
     color: $gray-500;
     cursor: pointer;
 
-    &:hover {
-      color: $gray-950;
-    }
-
-    &.active {
+    &:hover, &.active {
       color: $gray-950;
     }
   }

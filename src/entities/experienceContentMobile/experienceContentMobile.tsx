@@ -14,8 +14,12 @@ export const ExperienceContentMobile = ({className}: ExperienceContentProps) => 
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     return (
-        <div className={clsx(s['experience-content-mobile'], className)}>
-            {experienceDataItems.map((item, index) => (
+        <div className={clsx(
+            s['experience-content-mobile'],
+            className
+        )}>
+            {
+                experienceDataItems.map((item, index) => (
                 <div key={index}>
                     <div
                         className={clsx(
@@ -27,7 +31,8 @@ export const ExperienceContentMobile = ({className}: ExperienceContentProps) => 
                         {item.date}
                     </div>
                     {activeIndex === index && (
-                        <div className={clsx(s['experience-content-mobile--details'],
+                        <div className={clsx(
+                            s['experience-content-mobile--details'],
                             'shadow-md')}>
                             <DateAndDescription
                                 experience={item}

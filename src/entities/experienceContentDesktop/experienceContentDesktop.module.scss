@@ -34,11 +34,7 @@
       margin: 32px
     }
 
-    &:hover {
-      color: $gray-950;
-    }
-
-    &.active {
+    &:hover, &.active {
       color: $gray-950;
     }
   }

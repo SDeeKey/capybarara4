@@ -4,16 +4,16 @@
 @import '@/styles/_breakpoints';
 
 .experience-content {
-  .experience-content-mobile {
+  &--mobile {
     display: none;
   }
 
   @include respond(phone) {
-    .experience-content-mobile {
+    &--mobile {
       display: grid;
     }
 
-    .experience-content-desktop {
+    &--desktop {
       display: none;
     }
   }
