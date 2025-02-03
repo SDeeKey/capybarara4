@@ -1,0 +1,23 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+@import '@/styles/_colors';
+
+.work {
+  @include display-col(48px);
+  @include display-center;
+
+  &__title-block {
+    @include display-col;
+    @include display-center;
+
+    .title {
+      color: $gray-600;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: $gray-600;
+      text-align: center;
+    }
+  }
+}
