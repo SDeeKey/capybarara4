@@ -27,11 +27,7 @@ export const Work = () => {
             {
                 workDataItems.map((item, index) => (
                     <WorkBlock
-                        img={item.img}
-                        position={item.position}
-                        tags={item.tags}
-                        descriptionTitle={item.descriptionTitle}
-                        description={item.description}
+                        item={item}
                         key={index}
                     />
                 ))}

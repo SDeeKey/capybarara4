@@ -4,10 +4,10 @@ import capybaraTips from '@/img/capybaraTips.png'
 import whatIsCapybara from '@/img/whatIsCapybara.png'
 
 export interface WorkItemData {
-    img: StaticImageData,
-    descriptionTitle: string,
-    description: string,
-    tags: string[],
+    img: StaticImageData;
+    descriptionTitle: string;
+    description: string;
+    tags: string[];
     position: string;
 }
 
