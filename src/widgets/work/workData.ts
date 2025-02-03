@@ -8,7 +8,7 @@ export interface WorkItemData {
     descriptionTitle: string,
     description: string,
     tags: string[],
-    position: string,
+    position: string;
 }
 
 export const workDataItems: WorkItemData[] = [

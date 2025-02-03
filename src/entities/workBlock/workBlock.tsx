@@ -1,25 +1,28 @@
 import React from 'react';
 import s from './workBlock.module.scss'
 import {WorkTagBlock} from "@/shared/workTagBlock/workTagBlock";
-import {WorkItemData} from "@/widgets/work/workData";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import clsx from "clsx";
 import {LinkIcon} from "@/shared/ui-kit/linkIcon/linkIcon";
 
 interface WorkSectionProps {
-    item: WorkItemData
+    img: StaticImageData,
+    position: string,
+    tags: string[],
+    descriptionTitle: string,
+    description: string;
 }
 
-export const WorkBlock = ({item}: WorkSectionProps) => {
+export const WorkBlock = ({img, position, tags, descriptionTitle, description}: WorkSectionProps) => {
     return (
         <div className={clsx(
             s['work-block'],
-            item.position === 'left' ? s['leftBlock'] : s['rightBlock'],
+            s[`work-block--${position}`],
             'shadow-md'
         )}>
             <div className={s['work-block__image-block']}>
                 <Image
-                    src={item.img}
+                    src={img}
                     alt={'image'}
                     className={clsx(
                         s['image'],
@@ -32,16 +35,16 @@ export const WorkBlock = ({item}: WorkSectionProps) => {
                     s['work-block__text--title'],
                     'subtitle--sb')}
                 >
-                    {item.descriptionTitle}
+                    {descriptionTitle}
                 </p>
                 <p className={clsx(
                     s['work-block__text--description'],
                     'body-2--normal')}
                 >
-                    {item.description}
+                    {description}
                 </p>
                 <WorkTagBlock
-                    tags={item.tags}
+                    tags={tags}
                 />
                 <LinkIcon
                     link={'https://capybarafacts.com'}

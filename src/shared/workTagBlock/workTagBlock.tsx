@@ -3,7 +3,7 @@ import s from './workTagBlock.module.scss'
 import {Tag} from "@/shared/ui-kit/tag/tag";
 
 interface TagProps {
-    tags: string[]
+    tags: string[];
 }
 
 export const WorkTagBlock = ({tags}: TagProps) => {

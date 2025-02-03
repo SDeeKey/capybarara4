@@ -9,6 +9,26 @@
 
   border-radius: 12px;
 
+  &--left {
+    flex-direction: row;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+
+    .work-block__image-block {
+      border-radius: 0 12px 12px 0;
+
+      @include respond(tablet) {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+
   &__image-block {
     padding: 48px;
     border: 1px solid $gray-100;
@@ -25,13 +45,10 @@
     }
 
     .image {
-      // Почему такое маленькое изображение, хотя должно быть 480?
-      // Потому что на desktop'e оновыглядит хорошо, но при разрешении
-      // 1025 оно должно быть 336px, ибо в ином случае картинка едет.
-      // Поэтому сразу ставлю 336px, если использования дополнительных
-      // медиа-запросов это гейство
+      background-color: $white;
       width: 336px;
       border-radius: 12px;
+      object-fit: contain;
 
       @include respond(tablet) {
         width: 544px;
@@ -41,6 +58,7 @@
 
   &__text {
     @include display-col(24px);
+
     align-items: start;
     padding: 48px;
 
@@ -57,25 +75,5 @@
         max-width: 100%;
       }
     }
-  }
-}
-
-.leftBlock {
-  flex-direction: row;
-
-  @include respond(tablet) {
-    flex-direction: column;
-  }
-}
-
-.rightBlock {
-  flex-direction: row-reverse;
-
-  .work-block__image-block {
-    border-radius: 0 12px 12px 0;
-  }
-
-  @include respond(tablet) {
-    flex-direction: column;
   }
 }

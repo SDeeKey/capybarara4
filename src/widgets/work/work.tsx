@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 export const Work = () => {
     return (
-        <div className={clsx(
+        <section className={clsx(
             s['work'],
             'section-wrapper'
         )}>
@@ -27,10 +27,14 @@ export const Work = () => {
             {
                 workDataItems.map((item, index) => (
                     <WorkBlock
-                        item={item}
+                        img={item.img}
+                        position={item.position}
+                        tags={item.tags}
+                        descriptionTitle={item.descriptionTitle}
+                        description={item.description}
                         key={index}
                     />
                 ))}
-        </div>
+        </section>
     );
 };
