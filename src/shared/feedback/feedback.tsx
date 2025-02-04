@@ -4,15 +4,15 @@ import {FeedbackData} from "@/widgets/testimonials/feedbackData";
 import Image from "next/image";
 import clsx from "clsx";
 
-interface testimonialsProps {
+interface TestimonialsProps {
     item: FeedbackData;
     className?: string;
-    isFeedback1?: boolean;
-    isFeedback2?: boolean;
+    isFeedbackMain?: boolean;
+    isFeedbackUpper?: boolean;
     onClick?: () => void;
 }
 
-export const Feedback = ({item, className, isFeedback1, isFeedback2, onClick}: testimonialsProps) => {
+export const Feedback = ({item, className, isFeedbackMain, isFeedbackUpper, onClick}: TestimonialsProps) => {
     return (
         <div
             className={clsx(
@@ -24,7 +24,7 @@ export const Feedback = ({item, className, isFeedback1, isFeedback2, onClick}: t
         >
             <div className={s['feedback__header']}>
                 {
-                    isFeedback1 &&
+                    isFeedbackMain &&
                         <Image
                             src={item.img}
                             alt={'image'}
@@ -33,7 +33,7 @@ export const Feedback = ({item, className, isFeedback1, isFeedback2, onClick}: t
                         />
                     }
                 {
-                    !isFeedback1 ?
+                    !isFeedbackMain ?
                         <h3 className={clsx(
                             s['feedback__header__name'],
                             'subtitle--sb'
@@ -64,7 +64,7 @@ export const Feedback = ({item, className, isFeedback1, isFeedback2, onClick}: t
                 }
             </div>
             {
-                isFeedback1 ?
+                isFeedbackMain ?
                     <p className={clsx(
                         s['feedback__body'],
                         'body-2--normal'
@@ -72,7 +72,7 @@ export const Feedback = ({item, className, isFeedback1, isFeedback2, onClick}: t
                         {item.feedback}
                     </p>
                     :
-                    isFeedback2 ?
+                    isFeedbackUpper ?
                         <p className={clsx(
                             s['feedback__body--first'],
                             'body-2--normal'
