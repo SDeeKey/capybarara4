@@ -10,16 +10,11 @@ export const TestimonialsList = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        // Интервал в 5 секунд
         const interval = setInterval(() => {
-            // Обновляем currentIndex, увеличивая его на 1
-            // Если индекс достигает длины массива feedbackDataItem,
-            // он сбрасывается на 0 благодаря операции %
+
             setCurrentIndex(prev => (prev + 1) % feedbackDataItem.length);
         }, 5000);
-        // Очищаем интервал при размонтировании компонента, чтобы избежать утечек памяти
         return () => clearInterval(interval);
-
     }, []);
 
     // Переупорядочиваем массив feedbackDataItem так, чтобы текущий элемент (currentIndex)
