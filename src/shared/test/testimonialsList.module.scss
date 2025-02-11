@@ -1,0 +1,53 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_breakpoints';
+
+.testimonials-list {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 156px 180px;
+  grid-template-areas:
+      "feedback--0 feedback--1 feedback--1"
+      "feedback--0 feedback--2 feedback--3";
+  gap: 32px;
+  padding: 0 32px;
+
+  @include respond(tablet) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "feedback--0 feedback--0 feedback--0"
+      "feedback--1 feedback--2 feedback--3";
+    padding: 0;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "feedback--0"
+      "feedback--1"
+      "feedback--2"
+      "feedback--3";
+  }
+}
+
+.feedback--0 {
+  grid-area: feedback--0;
+}
+
+.feedback--1 {
+  grid-area: feedback--1;
+}
+
+.feedback--2 {
+  grid-area: feedback--2;
+}
+
+.feedback--3 {
+  grid-area: feedback--3;
+}
+
+.feedback--1, .feedback--2, .feedback--3{
+  gap: 16px !important;
+}
