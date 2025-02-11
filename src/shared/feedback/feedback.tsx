@@ -50,9 +50,7 @@ export const Feedback = ({item, className, isFeedbackMain, isFeedbackUpper, onCl
 
             </div>
             <p className={clsx(
-                s[`feedback__body${isFeedbackMain
-                    ? ''
-                    : isFeedbackUpper
+                s[`feedback__body${isFeedbackMain ? '' : isFeedbackUpper
                         ? '--first'
                         : '--second'}`],
                 'body-2--normal'
