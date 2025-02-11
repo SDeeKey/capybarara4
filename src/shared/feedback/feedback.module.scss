@@ -23,6 +23,16 @@
       color: $gray-600;
       white-space: nowrap;
 
+      // Для случая с косой чертой
+      &[data-has-slash="true"] {
+        align-items: center;
+      }
+
+      // Для случая без косой черты
+      &[data-has-slash="false"] {
+        @include display-col;
+      }
+
       @include respond(phone) {
         white-space: normal;
       }
