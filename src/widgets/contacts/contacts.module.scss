@@ -1,0 +1,34 @@
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.contacts {
+  @include display-col(48px);
+  @include display-center;
+
+  color: $gray-600;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(phone) {
+   gap: 24px;
+  }
+
+  &__header {
+    z-index: 2;
+    text-align: center;
+  }
+
+  .orangeParallax {
+    position: absolute;
+    z-index: 1;
+
+    @include respond(tablet) {
+      width: 150%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}

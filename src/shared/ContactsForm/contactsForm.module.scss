@@ -1,0 +1,19 @@
+@import '@/styles/_colors';
+@import '@/styles/_mixins';
+@import '@/styles/_breakpoints';
+
+.contacts-form {
+  @include display-col(24px);
+  @include display-center;
+
+  background-color: $gray-50;
+  border-radius: 12px;
+  padding: 48px;
+  width: 546px;
+  z-index: 2;
+
+  @include respond(phone) {
+    width: 100%;
+    max-width: 546px;
+  }
+}
