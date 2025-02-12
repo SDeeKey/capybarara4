@@ -1,0 +1,56 @@
+@import '@/styles/_mixins';
+@import '@/styles/_colors';
+@import '@/styles/_breakpoints';
+@import '@/styles/_variables';
+
+.getInTouch {
+  @include display-col(48px);
+  @include display-center;
+
+  text-align: center;
+  background-color: $gray-50;
+
+  @include respond(phone) {
+    gap: 24px;
+  }
+
+  &__header {
+    @include display-col(16px);
+
+    color: $gray-600;
+    max-width: 576px;
+  }
+
+  &__contacts {
+    @include display-col(16px);
+  }
+
+  &__mail {
+    @include display-row(8px);
+    @include display-center;
+
+    cursor: pointer;
+  }
+
+  &__phone {
+    @include display-row(8px);
+    @include display-center;
+
+    cursor: pointer;
+  }
+
+  &__notification {
+    background-color: $green;
+    border-radius: 12px;
+    color: $white;
+    height: fit-content;
+    left: 50%;
+    margin: 20px;
+    padding: 10px 20px;
+    top: 0;
+    position: fixed;
+    transition: opacity $default-transition;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}
