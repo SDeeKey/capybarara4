@@ -4,12 +4,18 @@ import {WorkBlock} from "@/entities/workBlock/workBlock";
 import {workDataItems} from "@/widgets/work/workData";
 import clsx from "clsx";
 
-export const Work = () => {
+type WorkProps = {
+    id: string;
+}
+
+export const Work = ({id}: WorkProps) => {
     return (
         <section className={clsx(
             s['work'],
             'section-wrapper'
-        )}>
+        )}
+        id={id}
+        >
             <div className={s['work__title-block']}>
                 <h1 className={clsx(
                     s['title'],
