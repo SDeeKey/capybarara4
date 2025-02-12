@@ -74,8 +74,13 @@ export const ContactsForm = () => {
                         required: 'Name is required',
                         minLength:
                             {
-                                value: 3,
-                                message: 'Name must be at least 3 characters long'
+                                value: 2,
+                                message: 'Name must be at least 2 characters long'
+                            },
+                        maxLength:
+                            {
+                                value: 50,
+                                message: 'Name cannot be more than 50 characters'
                             },
                     })}
                 error={errors.name?.message}

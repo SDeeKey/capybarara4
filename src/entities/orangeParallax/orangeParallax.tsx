@@ -5,11 +5,11 @@ import clsx from 'clsx';
 import s from './orangeParallax.module.scss';
 import Orange from '@/img/orangeEmoji.svg';
 
-type contactsProps = {
+type ContactsProps = {
     className?: string;
 };
 
-export const OrangeParallax = ({ className }: contactsProps) => {
+export const OrangeParallax = ({ className }: ContactsProps) => {
     const [positions, setPositions] = useState(
         Array.from({ length: 14 }, () => ({ x: 0, y: 0 }))
     );
@@ -31,8 +31,8 @@ export const OrangeParallax = ({ className }: contactsProps) => {
 
         // Обновляем позиции всех апельсинов на основе положения мыши.
         const newPositions = positions.map(() => ({
-            x: (mouseX / width) * 30,
-            y: (mouseY / height) * 30,
+            x: (mouseX / width) * 100,
+            y: (mouseY / height) * 100,
         }));
 
         setPositions(newPositions);
@@ -48,20 +48,21 @@ export const OrangeParallax = ({ className }: contactsProps) => {
             onMouseMove={handleMouseMove}
         >
             {
-                Array.from({ length: 14 }, (_, index) => (
-                <div
-                    key={index}
-                    className={clsx(
-                        s['orangeParallax__orange'],
-                        s[`orangeParallax__orange--${index}`]
-                    )}
-                    style={{
-                        transform: `translate(${positions[index].x}px, ${positions[index].y}px)`,
-                    }}
-                >
-                    <Orange />
-                </div>
-            ))}
+               positions.map((_, index) =>
+                   <div
+                       key={index}
+                       className={clsx(
+                           s['orangeParallax__orange'],
+                           s[`orangeParallax__orange--${index}`]
+                       )}
+                       style={{
+                           transform: `translate(${positions[index].x}px, ${positions[index].y}px)`,
+                       }}
+                   >
+                       <Orange/>
+                   </div>
+               )
+            }
         </div>
     );
 };

@@ -26,6 +26,15 @@ export const Input = ({
 
     const uniqueId = useId();
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (type === 'phone' && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
+            e.preventDefault();
+        }
+        if (basicInputProps?.onKeyDown) {
+            basicInputProps.onKeyDown(e);
+        }
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (basicInputProps?.onChange) {
             basicInputProps.onChange(e);
@@ -44,13 +53,10 @@ export const Input = ({
                             'body-3--normal'
                         )}
                     >
-                        {
-                            required ?
-                                (labelName
-                                    ? `${labelName}*`
-                                    : '*')
-                                : labelName
-                        }
+                        <label>
+                            <span>{labelName}</span>
+                            {required && <span>*</span>}
+                        </label>
                     </label>
                 )}
             <div className={s['input-wrapper__error-wrapper']}>
@@ -67,6 +73,7 @@ export const Input = ({
                     maxLength={type === 'phone' ? 16 : undefined}
                     {...basicInputProps}
                     onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                 />
                 {
                     error &&

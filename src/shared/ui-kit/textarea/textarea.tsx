@@ -4,7 +4,7 @@ import React, {useId} from 'react';
 import s from './textarea.module.scss'
 import clsx from "clsx";
 
-interface textareaParams {
+interface TextareaParams {
     labelName?: string;
     required?: boolean;
     placeholder?: string;
@@ -18,7 +18,7 @@ export const Textarea = ({
         placeholder,
         textareaProps,
         error
-    }: textareaParams) => {
+    }: TextareaParams) => {
 
     const uniqueId = useId();
 
@@ -34,13 +34,10 @@ export const Textarea = ({
                         'body-3--normal'
                     )}
                 >
-                    {
-                        required
-                            ? (labelName
-                                ? `${labelName}*`
-                                : '*')
-                            : labelName
-                    }
+                    <label>
+                        <span>{labelName}</span>
+                        {required && <span>*</span>}
+                    </label>
                 </label>
             }
             <div className={s['textarea-wrapper__error-wrapper']}>
@@ -51,7 +48,7 @@ export const Textarea = ({
                         {[s['textarea-wrapper__textarea--error']]: error},
                         'body-2--normal'
                     )}
-                    placeholder={placeholder || placeholder}
+                    placeholder={placeholder}
                     required={required}
                     {...textareaProps}
                 />
