@@ -1,7 +1,6 @@
 @import '@/styles/_colors';
 
 .textWithColoredLetters{
-
   &__letter{
     &:nth-child(odd) {
       color: $orange-500;
