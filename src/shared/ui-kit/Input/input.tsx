@@ -53,10 +53,8 @@ export const Input = ({
                             'body-3--normal'
                         )}
                     >
-                        <label>
-                            <span>{labelName}</span>
-                            {required && <span>*</span>}
-                        </label>
+                        <span>{labelName}</span>
+                        {required && <span>*</span>}
                     </label>
                 )}
             <div className={s['input-wrapper__error-wrapper']}>
@@ -77,8 +75,7 @@ export const Input = ({
                 />
                 {
                     error &&
-                    <span className={s['input-wrapper__error']}
-                    >
+                    <span className={s['input-wrapper__error']}>
                         {error}
                     </span>
                 }

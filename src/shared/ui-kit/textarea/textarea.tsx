@@ -34,10 +34,8 @@ export const Textarea = ({
                         'body-3--normal'
                     )}
                 >
-                    <label>
-                        <span>{labelName}</span>
-                        {required && <span>*</span>}
-                    </label>
+                    <span>{labelName}</span>
+                    {required && <span>*</span>}
                 </label>
             }
             <div className={s['textarea-wrapper__error-wrapper']}>
@@ -54,8 +52,7 @@ export const Textarea = ({
                 />
                 {
                     error &&
-                    <span className={s['textarea-wrapper__error']}
-                    >
+                    <span className={s['textarea-wrapper__error']}>
                         {error}
                     </span>
                 }

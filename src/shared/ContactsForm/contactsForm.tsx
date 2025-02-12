@@ -20,6 +20,7 @@ export const ContactsForm = () => {
         register,
         handleSubmit,
         setValue,
+        trigger,
         formState: {errors},
     } = useForm<FormValues>();
 
@@ -55,34 +56,46 @@ export const ContactsForm = () => {
                 type={"text"}
                 required={true}
                 labelName={"Subject"}
-                basicInputProps={register('subject', {
-                    required: 'Subject is required',
-                    maxLength:
-                        {
-                            value: 100,
-                            message: 'Subject cannot be more than 100 characters'
-                        },
-                })}
+                basicInputProps={{
+                    ...register('subject', {
+                        required: 'Subject is required',
+                        maxLength:
+                            {
+                                value: 100,
+                                message: 'Subject cannot be more than 100 characters'
+                            },
+                    }),
+                    onChange: (e) => {
+                        setValue('subject', e.target.value, {shouldValidate: true});
+                        void trigger('subject');
+                    },
+                }}
                 error={errors.subject?.message}
             />
             <Input
                 type={"text"}
                 required={true}
                 labelName={"Name"}
-                basicInputProps={register('name',
-                    {
-                        required: 'Name is required',
-                        minLength:
-                            {
-                                value: 2,
-                                message: 'Name must be at least 2 characters long'
-                            },
-                        maxLength:
-                            {
-                                value: 50,
-                                message: 'Name cannot be more than 50 characters'
-                            },
-                    })}
+                basicInputProps={{
+                    ...register('name',
+                        {
+                            required: 'Name is required',
+                            minLength:
+                                {
+                                    value: 2,
+                                    message: 'Name must be at least 2 characters long'
+                                },
+                            maxLength:
+                                {
+                                    value: 50,
+                                    message: 'Name cannot be more than 50 characters'
+                                },
+                        }),
+                    onChange: (e) => {
+                        setValue('name', e.target.value, {shouldValidate: true});
+                        void trigger('name');
+                    },
+                }}
                 error={errors.name?.message}
             />
             <Input
@@ -107,7 +120,8 @@ export const ContactsForm = () => {
             />
             <Textarea
                 labelName={"Description"}
-                textareaProps={register('description',
+                textareaProps={{
+                    ...register('description',
                     {
                         maxLength:
                             {
@@ -119,7 +133,12 @@ export const ContactsForm = () => {
                                 value: 10,
                                 message: 'Description must be at least 10 characters long'
                             },
-                    })}
+                    }),
+                    onChange: (e) => {
+                        setValue('description', e.target.value, { shouldValidate: true });
+                        void trigger('description');
+                    },
+                }}
                 error={errors.description?.message}
             />
             <Button
