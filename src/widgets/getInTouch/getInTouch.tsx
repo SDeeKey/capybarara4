@@ -22,7 +22,7 @@ export const GetInTouch = () => {
     };
 
     return (
-        <section className={clsx(
+        <footer className={clsx(
             s['getInTouch'],
             'section-wrapper'
         )}>
@@ -76,6 +76,6 @@ export const GetInTouch = () => {
                     Текст успешно скопирован!
                 </div>
             }
-        </section>
+        </footer>
     );
 };

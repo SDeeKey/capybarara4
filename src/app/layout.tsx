@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import React from "react";
 import { Inter } from 'next/font/google';
-import { Header } from "@/widgets/header/header";
 import { GetInTouch } from "@/widgets/getInTouch/getInTouch";
+import {Header} from "@/widgets/header/header";
 
 const inter = Inter({
     subsets: ['latin', 'cyrillic'],
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <Header/>
             <body className={inter.className}>
+            <Header/>
                 {children}
-            </body>
             <GetInTouch/>
+            </body>
         </html>
     );
 }

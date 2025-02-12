@@ -7,8 +7,6 @@ import rightOrange from '@/img/rightOrange.png'
 import Image from "next/image";
 import {ExperienceContent} from "@/shared/experienceContent/experienceContent";
 
-
-
 export const Experience = () => {
     return (
         <section className={clsx(
