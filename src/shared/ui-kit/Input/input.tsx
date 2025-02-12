@@ -30,15 +30,7 @@ export const Input = ({
         if (type === 'phone' && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
             e.preventDefault();
         }
-        if (basicInputProps?.onKeyDown) {
-            basicInputProps.onKeyDown(e);
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (basicInputProps?.onChange) {
-            basicInputProps.onChange(e);
-        }
+        basicInputProps?.onKeyDown?.(e);
     };
 
     return (
@@ -70,7 +62,7 @@ export const Input = ({
                     required={required}
                     maxLength={type === 'phone' ? 16 : undefined}
                     {...basicInputProps}
-                    onChange={handleChange}
+                    onChange={basicInputProps?.onChange}
                     onKeyDown={handleKeyDown}
                 />
                 {

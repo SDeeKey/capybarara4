@@ -143,7 +143,7 @@ export const ContactsForm = () => {
             />
             <Button
                 title={"Send it!"}
-                className="body-2--medium"
+                className={"body-2--medium"}
                 type={"submit"}
             />
         </form>

@@ -6,6 +6,7 @@ import {Experience} from "@/widgets/experience/experience";
 import {Work} from "@/widgets/work/work";
 import {Testimonials} from "@/widgets/testimonials/testimonials";
 import {Contacts} from "@/widgets/contacts/contacts";
+import {GetInTouch} from "@/widgets/getInTouch/getInTouch";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Work/>
             <Testimonials/>
             <Contacts/>
+            <GetInTouch/>
         </main>
     );
 }
