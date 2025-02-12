@@ -9,6 +9,8 @@ import { TextWithColoredLetters } from "@/entities/textWithColoredLetters/textWi
 
 export const GetInTouch = () => {
     const [isCopied, setIsCopied] = useState(false);
+    const email = 'capibarara@gmail.com';
+    const tel = '+8 800 200-59-20';
 
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text).then(() => {
@@ -41,11 +43,11 @@ export const GetInTouch = () => {
             </div>
             <div className={s['getInTouch__contacts']}>
                 <div className={s['getInTouch__mail']}
-                     onClick={() => copyToClipboard('capibarara@gmail.com')}
+                     onClick={() => copyToClipboard(email)}
                 >
-                    <Mail />
+                    <Mail/>
                     <TextWithColoredLetters
-                        text={'capibarara@gmail.com'}
+                        text={email}
                         className={clsx(
                             s['mail'],
                             'heading-2'
@@ -53,11 +55,11 @@ export const GetInTouch = () => {
                     />
                 </div>
                 <div className={s['getInTouch__phone']}
-                     onClick={() => copyToClipboard('+8 800 200-59-20')}
+                     onClick={() => copyToClipboard(tel)}
                 >
-                    <Phone />
+                    <Phone/>
                     <TextWithColoredLetters
-                        text={'+8 800 200-59-20'}
+                        text={tel}
                         className={clsx(
                             s['phone'],
                             'heading-2'
