@@ -1,0 +1,14 @@
+@import '@/styles/_mixins';
+
+.page {
+  position: relative;
+
+  .annoyingMessage{
+    @include display-row;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+  }
+}
+

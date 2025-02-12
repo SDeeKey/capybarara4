@@ -1,19 +1,23 @@
 type MenuItemsArray = {
     menuItem: string;
-    anchor?: string;
+    anchor: string;
 }
 
 export const navigationItems: MenuItemsArray[] = [
     {
+        anchor: '#experience',
         menuItem: 'Experience',
     },
     {
+        anchor: '#work',
         menuItem: 'Work',
     },
     {
+        anchor: '#testimonials',
         menuItem: 'Testimonials',
     },
     {
-        menuItem: 'Contact',
+        anchor: '#contacts',
+        menuItem: 'Contacts',
     },
 ]
