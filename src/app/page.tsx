@@ -13,10 +13,10 @@ export default function Home() {
         <main className={s['page']}>
             <Introduction/>
             <Skills/>
-            <Experience id={'experience'}/>
-            <Work id={'work'}/>
-            <Testimonials id={'testimonials'}/>
-            <Contacts id={'contacts'}/>
+            <Experience/>
+            <Work/>
+            <Testimonials/>
+            <Contacts/>
             <AnnoyingMessage ImagePath={Image} className={s['annoyingMessage']}/>
         </main>
     );

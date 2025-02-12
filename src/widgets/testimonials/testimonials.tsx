@@ -3,17 +3,13 @@ import s from './testimonials.module.scss'
 import clsx from "clsx";
 import {TestimonialsList} from "@/shared/test/testimonialsList";
 
-type TestimonialsProps = {
-    id: string;
-}
-
-export const Testimonials = ({id}: TestimonialsProps) => {
+export const Testimonials = () => {
     return (
         <section className={clsx(
             s['testimonials'],
             'section-wrapper'
         )}
-        id={id}
+        id={'testimonials'}
         >
             <div className={s['testimonials__wrapper']}>
                 <h1 className={clsx(

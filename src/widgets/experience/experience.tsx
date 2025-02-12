@@ -7,17 +7,15 @@ import rightOrange from '@/img/rightOrange.png'
 import Image from "next/image";
 import {ExperienceContent} from "@/shared/experienceContent/experienceContent";
 
-type ExperienceProps = {
-    id: string
-}
 
-export const Experience = ({id}: ExperienceProps) => {
+
+export const Experience = () => {
     return (
         <section className={clsx(
             s['experience'],
             'section-wrapper',
         )}
-        id={id}
+        id={'experience'}
         >
             <div className={s['experience__text-block']}>
                 <h1 className={'heading-1'}

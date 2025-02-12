@@ -4,17 +4,13 @@ import clsx from "clsx";
 import {ContactsForm} from "@/shared/ContactsForm/contactsForm";
 import {OrangeParallax} from "@/entities/orangeParallax/orangeParallax";
 
-type ContactsProps = {
-    id: string;
-}
-
-export const Contacts = ({id}: ContactsProps) => {
+export const Contacts = () => {
     return (
         <section className={clsx(
             s['contacts'],
             'section-wrapper'
         )}
-        id={id}
+        id={'contacts'}
         >
             <div className={s['contacts__header']}>
                 <h1 className={'heading-1'}>
