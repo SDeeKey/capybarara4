@@ -1,0 +1,14 @@
+@import '@/styles/_colors';
+
+.textWithColoredLetters{
+
+  &__letter{
+    &:nth-child(odd) {
+      color: $orange-500;
+    }
+
+    &:nth-child(even) {
+      color: $yellow-500
+    }
+  }
+}
