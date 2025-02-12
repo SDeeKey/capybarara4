@@ -1,0 +1,116 @@
+.orangeParallax {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &__orange {
+    position: absolute;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+
+    &--0 {
+      width: 104px;
+      top: -10px;
+      left: 243px;
+      transform: scaleX(-1) rotate(25deg);
+      opacity: 0.9;
+    }
+
+    &--1 {
+      width: 59px;
+      top: 66px;
+      left: 131px;
+      opacity: 0.9;
+    }
+
+    &--2 {
+      width: 79px;
+      top: 332px;
+      left: 56px;
+      transform: scaleX(-1) rotate(-75deg);
+      opacity: 0.9;
+    }
+
+    &--3 {
+      width: 104px;
+      top: 521px;
+      left: 234px;
+      transform: scaleX(-1) rotate(15deg);
+      opacity: 0.9;
+    }
+
+    &--4 {
+      width: 125px;
+      top: 690px;
+      left: 89px;
+      transform: rotate(15deg);
+      opacity: 0.95;
+    }
+
+    &--5 {
+      width: 142px;
+      top: -84px;
+      left: 513px;
+      transform: scaleX(-1) rotate(35deg);
+    }
+
+    &--6 {
+      width: 106px;
+      top: 268px;
+      left: 435px;
+      transform: scaleX(-1) rotate(25deg);
+      opacity: 0.6;
+    }
+
+    &--7 {
+      width: 91px;
+      top: 7px;
+      right: 318px;
+      transform: rotate(15deg);
+      opacity: 0.8;
+    }
+
+    &--8 {
+      width: 121px;
+      top: 224px;
+      right: 428px;
+      transform: rotate(5deg);
+    }
+
+    &--9 {
+      width: 160px;
+      top: 514px;
+      right: 600px;
+      transform: rotate(35deg);
+    }
+
+    &--10 {
+      width: 121px;
+      top: 917px;
+      left: 522px;
+      transform: scaleX(-1) rotate(5deg);
+    }
+
+    &--11 {
+      width: 121px;
+      top: 192px;
+      right: 101px;
+      transform: rotate(5deg);
+    }
+
+    &--12 {
+      width: 121px;
+      top: 508px;
+      right: 302px;
+      transform: rotate(5deg);
+    }
+
+    &--13 {
+      width: 141px;
+      top: 769px;
+      right: 66px;
+      transform: rotate(-5deg);
+      opacity: 0.9;
+    }
+  }
+}

@@ -4,6 +4,7 @@
 
 .btn {
   @include display-row;
+
   background-color: $orange-400;
   border-radius: 20px;
   color: $gray-50;
@@ -22,7 +23,6 @@
   }
 
   &:active {
-
     background-color: $orange-500;
   }
 }
