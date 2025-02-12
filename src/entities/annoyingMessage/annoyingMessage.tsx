@@ -12,7 +12,6 @@ type AnnoyingMessageProps = {
 }
 
 export const AnnoyingMessage = ({ImagePath, className}: AnnoyingMessageProps) => {
-
     const [isVisible, setIsVisible] = useState(true);
 
     const handleClose = () => {

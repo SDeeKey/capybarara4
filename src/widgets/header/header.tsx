@@ -11,7 +11,7 @@ export const Header = () => {
             <nav className={s['nav']}>
                 <Logo/>
                 <input
-                    type="checkbox"
+                    type={"checkbox"}
                     id={'check'}
                     className={s['nav__checkbox']}
                 />

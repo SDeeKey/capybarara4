@@ -17,7 +17,10 @@ export default function Home() {
             <Work/>
             <Testimonials/>
             <Contacts/>
-            <AnnoyingMessage ImagePath={Image} className={s['annoyingMessage']}/>
+            <AnnoyingMessage
+                ImagePath={Image}
+                className={s['annoyingMessage']}
+            />
         </main>
     );
 }
