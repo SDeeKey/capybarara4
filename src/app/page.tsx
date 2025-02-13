@@ -5,9 +5,9 @@ import {Experience} from "@/widgets/experience/experience";
 import {Work} from "@/widgets/work/work";
 import {Testimonials} from "@/widgets/testimonials/testimonials";
 import {Contacts} from "@/widgets/contacts/contacts";
-import {AnnoyingMessage} from "@/entities/annoyingMessage/annoyingMessage";
 import Image from '@/img/annoyingMessage.png'
 import React from "react";
+import {AnnoyingMessage} from "@/widgets/annoyingMessage/annoyingMessage";
 
 export default function Home() {
     return (

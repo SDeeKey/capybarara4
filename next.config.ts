@@ -1,6 +1,14 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'express-service-dun.vercel.app',
+            },
+        ],
+    },
     webpack: (config) => {
         config.module.rules.push({
             test: /\.svg$/,
@@ -8,7 +16,6 @@ const nextConfig: NextConfig = {
                 {
                     loader: '@svgr/webpack',
                     options: {
-                        // дополнительные опции, если необходимо
                     },
                 },
             ],

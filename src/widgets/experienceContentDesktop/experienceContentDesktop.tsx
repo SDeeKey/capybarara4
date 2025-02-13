@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import s from './experienceContentDesktop.module.scss'
 import clsx from "clsx";
 import {experienceDataItems} from "@/shared/experienceContent/experienceData";
-import {DateAndDescription} from "@/entities/dateAndDescription/dateAndDescription";
+import {DateAndDescription} from "@/widgets/dateAndDescription/dateAndDescription";
 
 type ExperienceContentProps = {
     className?: string;

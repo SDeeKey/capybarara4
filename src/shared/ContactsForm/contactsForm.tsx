@@ -7,13 +7,8 @@ import {Textarea} from '@/shared/ui-kit/textarea/textarea';
 import {Button} from '@/shared/ui-kit/button/button';
 import {useForm} from 'react-hook-form';
 import clsx from 'clsx';
-
-type FormValues = {
-    subject: string;
-    name: string;
-    phone: string;
-    description: string;
-};
+import {UserDataDto} from "@/entities/userData/userDataDto";
+import {sendUserData} from "@/entities/userData/userDataApi";
 
 export const ContactsForm = () => {
     const {
@@ -22,11 +17,14 @@ export const ContactsForm = () => {
         setValue,
         trigger,
         formState: {errors},
-    } = useForm<FormValues>();
+    } = useForm<UserDataDto>();
 
-    const onSubmit = (data: FormValues) => {
-        console.log(data);
-    };
+    const onSubmit = async (data: UserDataDto) => {
+        sendUserData(data)
+            .then(res=> console.log('Данные отправлены',res))
+            .catch((err=>console.log('Ошибка', err.message)))
+    }
+
 
     const formatPhoneNumber = (input: string) => {
         const cleaned = input.replace(/[^0-9]/g, '');
