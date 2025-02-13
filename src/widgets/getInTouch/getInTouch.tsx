@@ -5,7 +5,7 @@ import s from './getInTouch.module.scss';
 import clsx from "clsx";
 import Mail from '@/img/mailIcon.svg';
 import Phone from '@/img/phoneIcon.svg';
-import { TextWithColoredLetters } from "@/entities/textWithColoredLetters/textWithColoredLetters";
+import {TextWithColoredLetters} from "@/widgets/textWithColoredLetters/textWithColoredLetters";
 
 export const GetInTouch = () => {
     const [isCopied, setIsCopied] = useState(false);

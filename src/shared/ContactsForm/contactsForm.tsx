@@ -7,13 +7,8 @@ import {Textarea} from '@/shared/ui-kit/textarea/textarea';
 import {Button} from '@/shared/ui-kit/button/button';
 import {useForm} from 'react-hook-form';
 import clsx from 'clsx';
-
-type FormValues = {
-    subject: string;
-    name: string;
-    phone: string;
-    description: string;
-};
+import {UserDataDto} from "@/entities/userData/userDataDto";
+import {sendUserData} from "@/entities/userData/userData";
 
 export const ContactsForm = () => {
     const {
@@ -22,10 +17,18 @@ export const ContactsForm = () => {
         setValue,
         trigger,
         formState: {errors},
-    } = useForm<FormValues>();
+    } = useForm<UserDataDto>();
 
-    const onSubmit = (data: FormValues) => {
-        console.log(data);
+    const onSubmit = async (data: UserDataDto) => {
+        try {
+            // Вызываем функцию отправки данных
+            const response = await sendUserData(data);
+            console.log('Данные успешно отправлены:', response);
+            // здесь вы можете добавить логику уведомления пользователя,
+            // например, показать тост или сбросить форму
+        } catch (error) {
+            console.error('Ошибка отправки данных:', error);
+        }
     };
 
     const formatPhoneNumber = (input: string) => {
