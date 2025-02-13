@@ -5,6 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import {LinkIcon} from "@/shared/ui-kit/linkIcon/linkIcon";
 import {WorkItemDto} from "@/entities/work/workItemDto";
+import {baseApi} from "@/entities/globalConfig";
 
 interface WorkBlockProps {
     item: WorkItemDto;
@@ -12,7 +13,7 @@ interface WorkBlockProps {
 }
 
 export const WorkBlock = ({item, position}: WorkBlockProps) => {
-    const imageUrl = `https://express-service-dun.vercel.app/assets/${item.imageFileName}`;
+    const imageUrl = `${baseApi.defaults.baseURL}/assets/${item.imageFileName}`;
 
     return (
         <div className={clsx(

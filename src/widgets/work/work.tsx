@@ -10,16 +10,13 @@ import {getWorkData} from "@/entities/work/workApi";
 export const Work = () => {
     const [workData, setWorkData] = useState<WorkDto | null>(null);
 
-    useEffect(() => {
-        const fetchWorkData = async () => {
-            try {
-                const data = await getWorkData();
-                setWorkData(data);
-            } catch (error) {
-                console.error('Error get data', error);
-            }
-        };
+    const fetchWorkData = async () => {
+        getWorkData()
+            .then(data => setWorkData(data))
+            .catch(err => console.log('ошибка',err.message));
+    };
 
+    useEffect(() => {
         void fetchWorkData();
     }, []);
 
@@ -32,7 +29,7 @@ export const Work = () => {
             s['work'],
             'section-wrapper'
         )}
-                 id={'work'}
+        id={'work'}
         >
             <div className={s['work__title-block']}>
                 <h1 className={clsx(

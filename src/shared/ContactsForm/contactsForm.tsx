@@ -8,7 +8,7 @@ import {Button} from '@/shared/ui-kit/button/button';
 import {useForm} from 'react-hook-form';
 import clsx from 'clsx';
 import {UserDataDto} from "@/entities/userData/userDataDto";
-import {sendUserData} from "@/entities/userData/userData";
+import {sendUserData} from "@/entities/userData/userDataApi";
 
 export const ContactsForm = () => {
     const {
@@ -20,16 +20,11 @@ export const ContactsForm = () => {
     } = useForm<UserDataDto>();
 
     const onSubmit = async (data: UserDataDto) => {
-        try {
-            // Вызываем функцию отправки данных
-            const response = await sendUserData(data);
-            console.log('Данные успешно отправлены:', response);
-            // здесь вы можете добавить логику уведомления пользователя,
-            // например, показать тост или сбросить форму
-        } catch (error) {
-            console.error('Ошибка отправки данных:', error);
-        }
-    };
+        sendUserData(data)
+            .then(res=> console.log('Данные отправлены',res))
+            .catch((err=>console.log('Ошибка', err.message)))
+    }
+
 
     const formatPhoneNumber = (input: string) => {
         const cleaned = input.replace(/[^0-9]/g, '');
