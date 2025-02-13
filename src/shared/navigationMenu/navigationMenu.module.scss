@@ -1,0 +1,12 @@
+@import '@/styles/_colors';
+
+.menu-link {
+  &__item {
+    color: $gray-600;
+    text-decoration: none;
+
+    &:hover{
+      color: $gray-900;
+    }
+  }
+}

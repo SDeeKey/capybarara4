@@ -9,7 +9,9 @@ export const Work = () => {
         <section className={clsx(
             s['work'],
             'section-wrapper'
-        )}>
+        )}
+        id={'work'}
+        >
             <div className={s['work__title-block']}>
                 <h1 className={clsx(
                     s['title'],

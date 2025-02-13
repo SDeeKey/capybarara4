@@ -1,0 +1,14 @@
+.annoyingMessage {
+  position: relative;
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  &__img {
+    display: block;
+  }
+}

@@ -9,7 +9,9 @@ export const Contacts = () => {
         <section className={clsx(
             s['contacts'],
             'section-wrapper'
-        )}>
+        )}
+        id={'contacts'}
+        >
             <div className={s['contacts__header']}>
                 <h1 className={'heading-1'}>
                     Contact Capibarara

@@ -11,8 +11,10 @@ export const Experience = () => {
     return (
         <section className={clsx(
             s['experience'],
-            'section-wrapper'
-        )}>
+            'section-wrapper',
+        )}
+        id={'experience'}
+        >
             <div className={s['experience__text-block']}>
                 <h1 className={'heading-1'}
                 >
