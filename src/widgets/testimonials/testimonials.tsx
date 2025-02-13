@@ -5,13 +5,12 @@ import {TestimonialsList} from "@/shared/test/testimonialsList";
 
 export const Testimonials = () => {
 
-
     return (
         <section className={clsx(
             s['testimonials'],
             'section-wrapper'
         )}
-        id={'testimonialsRef'}
+        id={'testimonials'}
         >
             <div className={s['testimonials__wrapper']}>
                 <h1 className={clsx(
