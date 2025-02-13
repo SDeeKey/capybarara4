@@ -2,7 +2,7 @@ import React from 'react';
 import s from './contacts.module.scss'
 import clsx from "clsx";
 import {ContactsForm} from "@/shared/ContactsForm/contactsForm";
-import {OrangeParallax} from "@/entities/orangeParallax/orangeParallax";
+import {OrangeParallax} from "@/widgets/orangeParallax/orangeParallax";
 
 export const Contacts = () => {
     return (
