@@ -4,7 +4,6 @@
 @import '@/styles/_breakpoints';
 
 .experience-content-desktop{
-  display: grid;
   grid-template-areas: 'date experience';
   gap: 32px;
 

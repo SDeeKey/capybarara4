@@ -7,6 +7,9 @@
   &--mobile {
     display: none;
   }
+  &--desktop{
+    display: grid;
+  }
 
   @include respond(phone) {
     &--mobile {
