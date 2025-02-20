@@ -3,8 +3,7 @@
 @import '@/styles/_variables';
 @import '@/styles/_breakpoints';
 
-.experience-content-desktop{
-  display: grid;
+.experience-content-desktop {
   grid-template-areas: 'date experience';
   gap: 32px;
 
