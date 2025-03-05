@@ -9,9 +9,10 @@ interface ButtonProps {
     onClick?: () => void;
     className?: string;
     type?: 'button' | 'submit';
+    href?: string;
 }
 
-export const Button = ({className, title, onClick}: ButtonProps) => {
+export const Button = ({className, title, onClick, href}: ButtonProps) => {
     return (
         <button
             className={clsx(
@@ -21,7 +22,10 @@ export const Button = ({className, title, onClick}: ButtonProps) => {
             )}
             onClick={onClick}
         >
-            {title}
+            <a href={href}>
+                {title}
+            </a>
+
         </button>
     );
 };

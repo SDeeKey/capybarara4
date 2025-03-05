@@ -25,7 +25,9 @@ export const GetInTouch = () => {
         <footer className={clsx(
             s['getInTouch'],
             'section-wrapper'
-        )}>
+        )}
+        id="getInTouch"
+        >
             <div className={s['getInTouch__header']}>
                 <h1 className={clsx(
                     s['title'],
